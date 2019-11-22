@@ -6,6 +6,7 @@ import static org.newdawn.slick.Graphics.MODE_ALPHA_MAP;
 
 public class Player extends Unit
 {
+    TypeInput input=TypeInput.None;
     @Override
     public void attack() {
 
@@ -14,40 +15,57 @@ public class Player extends Unit
     public Player(int health, float mWalkSpeed, Rectangle location, int damage) {
         super(health, mWalkSpeed, location, damage);
     }
-public void Control(GameContainer gc,  int delta)
+
+    public TypeInput getInput() {
+        return input;
+    }
+
+    public void setInput(TypeInput input) {
+        this.input = input;
+    }
+
+    public void Control(int delta)
 {
-    Input input = gc.getInput();
 
-    if (input.isKeyPressed( Input.KEY_UP))
-    {
-
+switch (input)
+{
+    case R_UP:
+        move(getmWalkSpeed() * delta / 10, 0);
         if (!isJump())
         {
-            float j=-getmJumpSpeed();
+            float j = -getmJumpSpeed();
             setSpeed(0, (float) j);
             setJump(true);
         }
-    }
-    if (input.isKeyDown(Input.KEY_LEFT))
-    {
-        move(-getmWalkSpeed()*delta/10,0);
-    }else
-    if (input.isKeyDown(Input.KEY_RIGHT))
-    {
-        move(getmWalkSpeed()*delta/10,0);
-    }
-
+        break;
+    case L_UP:
+    move(-getmWalkSpeed() * delta / 10, 0);
+    case Up:
+        if (!isJump())
+        {
+            float j = -getmJumpSpeed();
+            setSpeed(0, (float) j);
+            setJump(true);
+        }
+        break;
+    case L:
+        move(-getmWalkSpeed() * delta / 10, 0);
+        break;
+    case R:
+        move(getmWalkSpeed() * delta / 10, 0);
+        break;
+}
 }
     public void update(GameContainer gc,  int delta)
     {
         super.update(gc,delta);
-        Control( gc, delta);
+        Control(delta);
         move();
 
     }
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException
     {
-        graphics.drawRect(getLocation().getX(),getLocation().getY(),getLocation().getWidth(),getLocation().getHeight());
-        graphics.drawLine(-1000,400,1000,400);
+
+
     }
 }

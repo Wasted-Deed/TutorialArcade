@@ -26,6 +26,25 @@ public class Game extends BasicGame
     @Override
     public void update(GameContainer gc, int i) throws SlickException
     {
+        Input input = gc.getInput();
+        TypeInput InputKeyboard=TypeInput.None;
+        if (input.isKeyDown( Input.KEY_UP))
+        {
+
+            if (input.isKeyDown( Input.KEY_RIGHT))
+             InputKeyboard=TypeInput.R_UP;
+            else if (input.isKeyDown( Input.KEY_LEFT))
+                  InputKeyboard=TypeInput.L_UP;
+                    else InputKeyboard=TypeInput.Up;
+        }else
+        {
+            if (input.isKeyDown( Input.KEY_RIGHT))
+                InputKeyboard=TypeInput.R;
+            else if (input.isKeyDown( Input.KEY_LEFT))
+                InputKeyboard=TypeInput.L;
+            else InputKeyboard=TypeInput.None;
+        }
+        player.setInput(InputKeyboard);
 
         if ((player.getLocation().getMaxY()>=400))//Условная проверка на достижение юнитов(игроком) некоторой поверхности
         {
@@ -41,7 +60,8 @@ public class Game extends BasicGame
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException
     {
-        player.render(gameContainer,graphics);
+        player.draw(graphics);
+        graphics.drawLine(-1000,400,1000,400);
     }
 
 

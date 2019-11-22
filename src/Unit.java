@@ -1,4 +1,5 @@
 import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
 import  org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
@@ -7,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 //Базовый класс юнитов
-public abstract class Unit
+public abstract class Unit implements Drawable,Movable
 {
 
     private Vector2f Speed;//скорость
@@ -29,6 +30,16 @@ public abstract class Unit
 
 
 
+    @Override
+public void move()
+{
+    Location.setLocation(Location.getX()+Speed.getX(),Location.getY()+Speed.getY());
+}
+
+    @Override
+    public void move(float x, float y) {
+        Location.setLocation(Location.getX()+x,Location.getY()+y);
+    }
 
     public Map<String, Vector2f> getListForce() {
         return ListForce;
@@ -52,14 +63,11 @@ public abstract class Unit
     }
 
 
-    public  void move()
+    @Override
+    public void draw(Graphics g)
     {
-        Location.setLocation(Location.getX()+Speed.getX(),Location.getY()+Speed.getY());
-    };
-    public  void move(float x,float y)
-    {
-        Location.setLocation(Location.getX()+x,Location.getY()+y);
-    };
+        g.drawRect(getLocation().getX(),getLocation().getY(),getLocation().getWidth(),getLocation().getHeight());
+    }
 
     public int getHealth() {
         return health;
