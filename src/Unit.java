@@ -1,16 +1,26 @@
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import  org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 //Базовый класс юнитов
 public abstract class Unit implements Drawable,Movable
 {
+    private Image ImageR;
 
+    public Image getImageL() {
+        return this.ImageL;
+    }
+
+    public void setImageL(final Image imageL) {
+        this.ImageL = imageL;
+    }
+
+    private Image ImageL;
     private Vector2f Speed;//скорость
     private float mJumpSpeed;//скорость прыжка
     private int health;
@@ -28,7 +38,15 @@ public abstract class Unit implements Drawable,Movable
         OnEarth = onEarth;
     }
 
+    public Image getImageR() {
+        return this.ImageR;
+    }
 
+    public void setImageR( Image imageR)
+    {
+
+        this.ImageR = imageR;
+    }
 
     @Override
 public void move()
@@ -66,7 +84,11 @@ public void move()
     @Override
     public void draw(Graphics g)
     {
+        if (getImageR()==null)
         g.drawRect(getLocation().getX(),getLocation().getY(),getLocation().getWidth(),getLocation().getHeight());
+        else
+            getImageR().drawCentered(getLocation().getCenterX(),getLocation().getCenterY());
+
     }
 
     public int getHealth() {
@@ -101,10 +123,12 @@ public void move()
         return Speed;
     }
 
-    public void setSpeed(Vector2f speed) {
-        Speed = speed;
+    public void SetSpeed(float x, float y)
+    {
+        Speed.x = x;
+        Speed.y=y;
     }
-    public void setSpeed( float x,float y)
+    public void addSpeed(float x, float y)
     {
         Speed.x += x;
         Speed.y+=y;
@@ -117,7 +141,7 @@ public void move()
         if (!isOnEarth())
         {
 
-          if (ListForce.containsKey("Gravity"))  setSpeed(ListForce.get("Gravity").getX()*delta/1000, ListForce.get("Gravity").getY()*delta/1000);
+          if (ListForce.containsKey("Gravity"))  addSpeed(ListForce.get("Gravity").getX()*delta/1000, ListForce.get("Gravity").getY()*delta/1000);
         }
         // иначе (когда юнит на земле)устанавливаем флаг состояния прыжка в false
         else jump=false;

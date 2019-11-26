@@ -1,8 +1,5 @@
 import org.newdawn.slick.*;
 import org.newdawn.slick.geom.Rectangle;
-import org.newdawn.slick.geom.Vector2f;
-
-import static org.newdawn.slick.Graphics.MODE_ALPHA_MAP;
 
 public class Player extends Unit
 {
@@ -34,7 +31,7 @@ switch (input)
         if (!isJump())
         {
             float j = -getmJumpSpeed();
-            setSpeed(0, (float) j);
+            addSpeed(0, (float) j);
             setJump(true);
         }
         break;
@@ -44,7 +41,7 @@ switch (input)
         if (!isJump())
         {
             float j = -getmJumpSpeed();
-            setSpeed(0, (float) j);
+            addSpeed(0, (float) j);
             setJump(true);
         }
         break;
