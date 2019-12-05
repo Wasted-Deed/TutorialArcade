@@ -8,12 +8,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 //Базовый класс юнитов
-public abstract class Unit implements Drawable,Movable
+public abstract class Unit implements Drawable,Movable,Behave
 {
     private Image ImageR;
 
     public Image getImageL() {
         return this.ImageL;
+    }
+
+    @Override
+    public void behave()
+    {
+
     }
 
     public void setImageL(final Image imageL) {
@@ -49,10 +55,10 @@ public abstract class Unit implements Drawable,Movable
     }
 
     @Override
-public void move()
-{
-    Location.setLocation(Location.getX()+Speed.getX(),Location.getY()+Speed.getY());
-}
+    public void move()
+    {
+        Location.setLocation(Location.getX()+Speed.getX(),Location.getY()+Speed.getY());
+    }
 
     @Override
     public void move(float x, float y) {
@@ -80,12 +86,15 @@ public void move()
 
     }
 
+    public void setSpeed(final Vector2f speed) {
+        this.Speed = speed;
+    }
 
     @Override
     public void draw(Graphics g)
     {
         if (getImageR()==null)
-        g.drawRect(getLocation().getX(),getLocation().getY(),getLocation().getWidth(),getLocation().getHeight());
+            g.drawRect(getLocation().getX(),getLocation().getY(),getLocation().getWidth(),getLocation().getHeight());
         else
             getImageR().drawCentered(getLocation().getCenterX(),getLocation().getCenterY());
 
@@ -100,7 +109,7 @@ public void move()
     }
 
     public void setmJumpSpeed(float mJumpSpeed) {
-        this.mJumpSpeed = mJumpSpeed;
+        this.mJumpSpeed = (float) (mJumpSpeed/ 2);
     }
 
     public void setHealth(int health) {
@@ -135,18 +144,7 @@ public void move()
     }
 
 //Функция выполняющася каждый кадр
-    public void update(GameContainer gc, int delta)
-    {
-        ///Если юнит в воздухе - сила тяжести  действует
-        if (!isOnEarth())
-        {
 
-          if (ListForce.containsKey("Gravity"))  addSpeed(ListForce.get("Gravity").getX()*delta/1000, ListForce.get("Gravity").getY()*delta/1000);
-        }
-        // иначе (когда юнит на земле)устанавливаем флаг состояния прыжка в false
-        else jump=false;
-
-    }
     public void setLocation(Rectangle location) {
         Location = location;
     }

@@ -32,7 +32,7 @@ public class Game extends BasicGame
         player=new Player(3,5,new Rectangle(30,50,loader.getImagesMap().get(Sprites.PLAYER_L).getWidth(),
                                 loader.getImagesMap().get(Sprites.PLAYER_L).getHeight()),2);
 
-        player.setmJumpSpeed(2);
+        player.setmJumpSpeed((float) 1.5);
         player.setJump(false);
         player.getListForce().put("Gravity",new Vector2f(0, (float) 10));
         player.setImageR(loader.getImagesMap().get(Sprites.PLAYER_L) );
@@ -42,20 +42,23 @@ public class Game extends BasicGame
     @Override
     public void update(GameContainer gc, int i) throws SlickException
     {
+        ArrayList<Unit> AllUnit=new ArrayList();
+        AllUnit.addAll(enemy);
+        AllUnit.add(player);
+        Physics.ForceGravityOnAllUnits(AllUnit);
         for ( Ai CurrentEnemy : enemy)
         {
-            CurrentEnemy.update(gc,i);
+            CurrentEnemy.behave(enemy);
         }
-
-        player.setInput(new ChechInput(gc).CheckPlayer());
         if ((player.getLocation().getMaxY()>=400))//Условная проверка на достижение юнитов(игроком) некоторой поверхности
         {
             //Если игрок на   поверхности,то установка флага  нахождения на земле и зануление скорости по y.
-                    player.setOnEarth(true);
-                    player.SetSpeed(player.getSpeed().x, 0);
+            player.setOnEarth(true);
+            player.SetSpeed(player.getSpeed().x, 0);
         }
         else player.setOnEarth(false);
-        player.update( gc,i);
+        player.setInput(new ChechInput(gc).CheckPlayer());
+        player.behave();
 
 
     }

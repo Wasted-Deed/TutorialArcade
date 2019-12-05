@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11237784-26fc-40f8-b6f8-74e2cc2d1993" name="Default Changelist" comment="" />
+    <list default="true" id="11237784-26fc-40f8-b6f8-74e2cc2d1993" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Physics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Ai.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Ai.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/META-INF/slick2d1.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Behave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Behave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BehaveAi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BehaveAi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +43,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1TkAb8m8Dd5m1PDOaoZcyc22QBF" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/slick.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -84,10 +101,25 @@
       <workItem from="1574415002782" duration="642000" />
       <workItem from="1574415761960" duration="110000" />
       <workItem from="1574415930407" duration="302000" />
+      <workItem from="1575540831711" duration="26000" />
+      <workItem from="1575540876375" duration="1235000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

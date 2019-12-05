@@ -21,13 +21,13 @@ public class Player extends Unit
         this.input = input;
     }
 
-    public void Control(int delta)
+    public void Control()
 {
 
 switch (input)
 {
     case R_UP:
-        move(getmWalkSpeed() * delta / 10, 0);
+        move(getmWalkSpeed()  / 4, 0);
         if (!isJump())
         {
             float j = -getmJumpSpeed();
@@ -36,7 +36,7 @@ switch (input)
         }
         break;
     case L_UP:
-    move(-getmWalkSpeed() * delta / 10, 0);
+    move(-getmWalkSpeed()  / 4, 0);
     case Up:
         if (!isJump())
         {
@@ -46,23 +46,21 @@ switch (input)
         }
         break;
     case L:
-        move(-getmWalkSpeed() * delta / 10, 0);
+        move(-getmWalkSpeed()  / 10, 0);
         break;
     case R:
-        move(getmWalkSpeed() * delta / 10, 0);
+        move(getmWalkSpeed() / 10, 0);
         break;
 }
 }
-    public void update(GameContainer gc,  int delta)
+
+    @Override
+    public void behave()
     {
-        super.update(gc,delta);
-        Control(delta);
+        Control();
         move();
 
     }
-    public void render(GameContainer gameContainer, Graphics graphics) throws SlickException
-    {
 
 
-    }
 }
