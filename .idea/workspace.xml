@@ -2,21 +2,100 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11237784-26fc-40f8-b6f8-74e2cc2d1993" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Physics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Main/Game.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Main/MenuWindow.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Main/PlayWindow.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Ai.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Behave.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/BehaveAi.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/ChechInput.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Collision.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Drawable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/ImageLoader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Movable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Physics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Sprites.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/TypeInput.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Unit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/fish.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/menu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/Behaviour.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/Building.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/Drawable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/GameMap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/TypeBuilding.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/slick2d1/player.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/fish.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/menu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/player.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/MenuWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/PlayWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Unit/Ai.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Unit/Behave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Unit/Collision.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Unit/ImageLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Unit/Movable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Unit/Physics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Unit/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Unit/Sprites.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Unit/TypeInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Unit/Unit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ocean/Behaviour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ocean/Building.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ocean/GameMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Ai.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Ai.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/META-INF/slick2d1.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Behave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Behave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BehaveAi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BehaveAi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Behaviour.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Building.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Drawable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ocean/Drawable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TypeBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ocean/TypeBuilding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Ai.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Behave.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/BehaveAi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ChechInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Collision.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Drawable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ImageLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Movable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/PACKAGE_NAME/Bullet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Physics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Player$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Sprites.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/TypeInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fish.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/player.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slick2d1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/slick2d1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ai.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Behave.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BehaveAi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/BehaveAi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bullet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChechInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/ChechInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Drawable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ImageLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Movable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Physics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprites.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TypeInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unit.java" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +126,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1TkAb8m8Dd5m1PDOaoZcyc22QBF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -62,26 +151,26 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Game" />
+      <option name="MAIN_CLASS_NAME" value="Main.Game" />
       <module name="slick2d1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -103,6 +192,7 @@
       <workItem from="1574415930407" duration="302000" />
       <workItem from="1575540831711" duration="26000" />
       <workItem from="1575540876375" duration="1235000" />
+      <workItem from="1579451426442" duration="431000" />
     </task>
     <servers />
   </component>
@@ -121,5 +211,34 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579451586219">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1579451586219" />
+    <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579451584831">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1579451584831" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1579451770444">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1579451770444" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1579451770443">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1579451770443" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1579451770443">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1579451770443" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1579451770443">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1579451770443" />
   </component>
 </project>
