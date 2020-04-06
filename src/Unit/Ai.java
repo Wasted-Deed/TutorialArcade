@@ -33,6 +33,7 @@ public class Ai extends Unit implements BehaveAi {
     public Ai(int health, float mWalkSpeed, Rectangle location, int damage)
     {
         super(health, mWalkSpeed, location, damage);
+
         this.SetSpeed(-this.getmWalkSpeed() / 10.0F, 0.0F);
     }
 

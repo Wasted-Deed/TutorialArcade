@@ -1,5 +1,6 @@
 package Unit;
 
+import Utils.TypeInput;
 import org.newdawn.slick.geom.Rectangle;
 
 public class Player extends Unit
