@@ -2,8 +2,8 @@ package Utils;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.geom.Point;
 
-import java.awt.*;
 
 public class CheckInput
 {

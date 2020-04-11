@@ -1,192 +1,316 @@
 package SystemDialogue;
 
-import org.newdawn.slick.*;
+import org.lwjgl.Sys;
 import org.newdawn.slick.Font;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.geom.Point;
 import org.newdawn.slick.geom.Rectangle;
 
-import java.awt.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
 public class Dialogue
 {
-    private Rectangle LocationText=new Rectangle(0,0,0,0);
-    private Rectangle Border=new Rectangle(0,0,0,0);
+    ArrayList<Page> text;//Коллекция страниц
+    Rectangle PlaceOutputText;//Позиция вывода текста
+    Rectangle  Border;//Позиция рамки
+    Integer MaxY;//Ограничение.Значнеие.эниже которого диалог не должен находится
+    int MaxCountPage,NumberCurrentPage;
+    boolean isVisible=false;
+    ConditionChoice condition;
+    HashMap<String,Button> Buttons;//Коллекция кнопок
+    int DistancesFromTextToBorder=0;//Расстояние между рамкой и текстом
+
+    public int getDistancesFromTextToBorder() {
+        return this.DistancesFromTextToBorder;
+    }
 
 
-    private String Text;
-    private int CountLineInPage =0;
-    private int CountCharInLine=0;
-    private Rectangle ButtonYes=new Rectangle(0,0,0,0);
-    private Rectangle ButtonNo=new Rectangle(0,0,0,0);
-    private  Rectangle ButtonNextPage=new Rectangle(0,0,0,0);
-    private int MaxCountLineInPage;
-    private int CountPage;
-    private int  CurrentPage=0;
-    private Font   FontText;
-    private ConditionChoice condition=ConditionChoice.NO_CHOICE;
-    private boolean visible=false;
-    public Dialogue(Rectangle location, String text, Font fontText, ConditionChoice condition) {
-        this.LocationText = location;
-        this.Text = text;
-        this.FontText = fontText;
-        this.condition = condition;
-    }
-    public int getMaxCountLineInPage() {
-        return this.MaxCountLineInPage;
+    public void setDistancesFromTextToBorder(final int distancesFromTextToBorder) {
+        this.DistancesFromTextToBorder = distancesFromTextToBorder;
     }
 
-    public void setMaxCountLineInPage(final int maxCountLineInPage) {
-        this.MaxCountLineInPage = maxCountLineInPage;
-    }
-    public int getCountLineInPage() {
-        return this.CountLineInPage;
-    }
-
-    public void setCountLineInPage(int countLineInPage) {
-        this.CountLineInPage = countLineInPage;
-    }
-
-    public int getCountCharInLine() {
-        return this.CountCharInLine;
-    }
-
-    public void setCountCharInLine(int countCharInLine) {
-        this.CountCharInLine = countCharInLine;
-    }
-
-    public boolean isVisible() {
-        return this.visible;
-    }
-
-    public void setVisible(boolean visible) {
-        this.visible = visible;
-    }
-    public Dialogue()
-    {
-    }
-
-    public Font getFontText() {
-        return this.FontText;
-    }
-
-    public void setFontText(Font fontText) {
-        this.FontText = fontText;
-    }
-
-    public Rectangle getLocationText() {
-        return this.LocationText;
-    }
-
-    public void setLocation(float x1,float y1, float width)
-    {
-        LocationText.setX(x1);
-        LocationText.setWidth(width);
-        OutputText();
-        LocationText.setY(y1-50);
-        Border=new Rectangle(LocationText.getX()-10,LocationText.getY(),LocationText.getWidth()+10,LocationText.getHeight()+30);
-    }
-    public String getText() {
-        return this.Text;
-    }
-
-    public void OutputText()
-    {
-        int Width=FontText.getWidth(Text.substring(0,1));
-        if (CountCharInLine==0)
-            CountCharInLine=(int)Math.ceil(LocationText.getWidth()/Width);
-
-    CountLineInPage = (int) Math.ceil((double)Text.length()/(CountCharInLine));
-    if (CountLineInPage >MaxCountLineInPage)
-        CountLineInPage =MaxCountLineInPage;
-        CountPage= Text.length() /(CountLineInPage*CountCharInLine);
-        getLocationText().setHeight(FontText.getLineHeight()* CountLineInPage);
-
-    }
-    public void setText(String text)
-    {
-        this.Text = text;
-
-    }
-    public void update()
-    {
-        if (CurrentPage<(CountPage))
-        {
-            ButtonNextPage=new Rectangle(Border.getX(), LocationText.getMaxY(), Border.getWidth(), Border.getHeight()-LocationText.getHeight());
-        }else
-        {
-            ButtonNextPage=new Rectangle(0, 0, 0, 0);
-            ButtonYes=new Rectangle(Border.getX()+2, LocationText.getMaxY(),Border.getWidth()/2-2,Border.getHeight()-LocationText.getHeight());
-            ButtonNo=new Rectangle(Border.getX()+2+Border.getWidth()/2+2, LocationText.getMaxY(),Border.getWidth()/2-2,Border.getHeight()-LocationText.getHeight());
-
-        }
-    }
     public ConditionChoice getCondition() {
         return this.condition;
     }
 
-    public void setCondition(ConditionChoice condition) {
+    public void setCondition(final ConditionChoice condition) {
         this.condition = condition;
+    }
+
+    public Dialogue()
+    {
+        text=new ArrayList<>();
+        PlaceOutputText=new Rectangle(0,0,0,0);
+        Border=new Rectangle(0,0,0,0);
+        condition=ConditionChoice.NO_CHOICE;
+        Buttons=new HashMap<>();
+    }
+    public boolean isVisible() {
+        return this.isVisible;
+    }
+
+    public void setVisible(final boolean visible)
+    {
+
+        this.isVisible = visible;
+    }
+//Задать единый шрифт всем страницам
+    public void SetFontAllPage(Font FontPages)
+    {
+        Iterator<Page> Pages=text.iterator();
+        while (Pages.hasNext())
+        {
+            Pages.next().setFontText(FontPages);
+
+        }
+    }
+    public  void addPage(Page newPage)
+    {
+        text.add(newPage);
+
+    }
+    public void addButton(Button newButton)
+    {
+        Buttons.put(newButton.getName(),newButton);
+
+    }
+    public int getNumberCurrentPage() {
+        return this.NumberCurrentPage;
     }
     public  void  checkClickOnButton(Point PosMouse)
     {
-        if (PosMouse!=null) {
-            if (ButtonNextPage.contains((float) PosMouse.getX(), (float) PosMouse.getY())) {
-                condition = ConditionChoice.NEXT;
-                CurrentPage += 1;
-            } else if (ButtonNo.contains((float) PosMouse.getX(), (float) PosMouse.getY()))
-                condition = ConditionChoice.NO;
-            else if (ButtonYes.contains((float) PosMouse.getX(), (float) PosMouse.getY()))
-                condition = ConditionChoice.YES;
+        if (PosMouse!=null)
+        {
+            Iterator<Button> CurrentButton=Buttons.values().iterator();
+            while (CurrentButton.hasNext())
+            {
+                Button button=CurrentButton.next();
+                if ((button.getLocation().contains((float) PosMouse.getX(), (float) PosMouse.getY())&&
+                        (button.isVisible())))
+                {
+                    condition = button.getNameAction();
+                }
+            }
         }
-        System.out.println(condition.toString());
+
 
     }
+    public  void udpate()
+    {
+
+        switch (condition)
+        {
+            case NEXT:
+                setNumberCurrentpage(NumberCurrentPage+1);
+                condition=ConditionChoice.NO_CHOICE;
+
+                break;
+        }
+        //Если конечная страница - установить другие кнопки
+        if ((NumberCurrentPage)>=(text.size()-1))
+        {
+            Buttons.get("NO").setVisible(true);
+            Buttons.get("YES").setVisible(true);
+            Buttons.get("NEXT").setVisible(false);
+        }
+    }
+    public int getMaxY() {
+        return this.MaxY;
+    }
+    public void setMaxY(final Integer maxY) {
+        this.MaxY = maxY;
+    }
+public  void CheckBellowMaxY()
+{
+    if((MaxY!=null))
+    {
+        if ((Border.getMaxY()>MaxY)) {
+            int difference = (int) (Border.getMaxY() - MaxY);
+            PlaceOutputText.setY((PlaceOutputText.getY() - difference));
+            Iterator<Button> CurrentButton=Buttons.values().iterator();
+            while (CurrentButton.hasNext())
+            {
+                Button button=CurrentButton.next();
+                button.getLocation().setY(button.getLocation().getY()-difference);
+            }
+            Border.setY(Border.getY() - difference);
+            difference = (int) (Border.getMaxY() - MaxY);
+            System.out.println(difference);
+        }
+    }
+}
+//Изменение положения по Y в зависимости от данных( количесство строк)
+public void updateHeight()
+{
+    Page CurrentPage=text.get(NumberCurrentPage);
+    int difference= (int) (CurrentPage.GetHeightPage()-PlaceOutputText.getHeight());
+    if(difference>0)
+    {
+        PlaceOutputText.setHeight(PlaceOutputText.getHeight()+difference);
+        PlaceOutputText.setY(PlaceOutputText.getY()-difference);
+        Border.setY(Border.getY() - difference);
+        Border.setHeight(Border.getHeight()+difference);
+    }else
+    {
+        PlaceOutputText.setHeight(PlaceOutputText.getHeight()-Math.abs(difference));
+        PlaceOutputText.setY(PlaceOutputText.getY()+Math.abs(difference));
+        Border.setHeight(Border.getHeight()-Math.abs(difference));
+        Border.setY(Border.getY()+Math.abs(difference));
+    }
+}
+//Изменение положения по Y в зависимости от данных( длина строк)
+public void updateWidth()
+{
+    Page CurrentPage=text.get(NumberCurrentPage);
+    for (int i=0;i<CurrentPage.getText().size();i++)
+    {
+        //Адаптация  ширины диалога
+        int difference= (int) ((CurrentPage.GetWidthline(i)-PlaceOutputText.getWidth())/2);
+        if (difference>=0)
+        {
+            PlaceOutputText.setWidth(2*difference+PlaceOutputText.getWidth());
+            PlaceOutputText.setX(PlaceOutputText.getX()-difference);
+            Border.setWidth(2*difference+Border.getWidth());
+            Border.setX(Border.getX()-difference);
+        }else
+        {
+            difference=Math.abs(difference);
+            PlaceOutputText.setWidth(PlaceOutputText.getWidth()-2*difference);
+            PlaceOutputText.setX(PlaceOutputText.getX()+difference);
+            Border.setWidth(Border.getWidth()-2*difference);
+            Border.setX(Border.getX()+difference);
+        }
+        System.out.println("4");
+
+    }
+}
+//Функция,которая обновляет положение всех элементов диалога ,используя updateHeight() и updateWidth()
+    public void UpdatePosition()
+    {
+        updateHeight();
+        updateWidth();
+        //Обновление положения кнопок
+        Iterator<Button> CurrentButton=Buttons.values().iterator();
+            while (CurrentButton.hasNext())
+            {
+                Button button=CurrentButton.next();
+                if(button.getName().equals("NEXT"))
+                {
+                    button.getLocation().setLocation(Border.getX(),PlaceOutputText.getMaxY());
+                    button.getLocation().setWidth(Border.getWidth());
+                }
+                if(button.getName().equals("YES"))
+                {
+                    button.getLocation().setLocation(Border.getX(),PlaceOutputText.getMaxY());
+                    button.getLocation().setWidth(Border.getWidth()/2);
+                }
+                if(button.getName().equals("NO"))
+                {
+                    button.getLocation().setLocation(Border.getX()+Border.getWidth()/2,PlaceOutputText.getMaxY());
+                    button.getLocation().setWidth(Border.getWidth()/2);
+                }
+
+
+                if (button.getLocation().getHeight()==0)
+                {
+                    button.getLocation().setHeight(DistancesFromTextToBorder);
+
+                }else
+                    {
+                        //Проверка на то,что кнопка лежит внутри рамки
+                     int difference = (int) (button.getLocation().getMaxY()-Border.getMaxY());
+                    if (difference>=0)
+                    {
+                        PlaceOutputText.setY((PlaceOutputText.getY() -  difference));
+                        button.getLocation().setY(button.getLocation().getY()-difference);
+                        Border.setY(PlaceOutputText.getY()-DistancesFromTextToBorder);
+                        Border.setHeight(  button.getLocation().getMaxY()-Border.getY());
+                    }
+                }
+            }
+        CheckBellowMaxY();
+    }
+    public void setNumberCurrentpage(final int numberCurrentpage)
+    {
+        this.NumberCurrentPage = numberCurrentpage;
+        UpdatePosition();
+    }
+
+    public Rectangle getPlaceOutputText() {
+        return this.PlaceOutputText;
+    }
+
+    public void setPlaceOutputText(final Rectangle placeOutputText)
+    {
+        this.PlaceOutputText = placeOutputText;
+        //Установка положения рамки
+        if (DistancesFromTextToBorder!=0)
+        {
+            Border.setX(PlaceOutputText.getX()-DistancesFromTextToBorder);
+            Border.setY(PlaceOutputText.getY()-DistancesFromTextToBorder);
+            Border.setHeight(PlaceOutputText.getHeight()+2*DistancesFromTextToBorder);
+            Border.setWidth(PlaceOutputText.getWidth()+2*DistancesFromTextToBorder);
+            System.out.println("00-MaxYBorder="+Border.getMaxY()+"MaxYText="+PlaceOutputText.getMaxY()+" MinYBorder="+Border.getY()+" MinYPlace="+PlaceOutputText.getY());
+        }
+        UpdatePosition();
+    }
+
+    public Rectangle getBorder() {
+        return this.Border;
+    }
+
+    public void setBorder(final Rectangle border) {
+        this.Border = border;
+    }
+
+    public int getMaxCountPage() {
+        return this.MaxCountPage;
+    }
+
+    public void setMaxCountPage(final int maxCountPage) {
+        this.MaxCountPage = maxCountPage;
+    }
+
+    public ArrayList<Page> getText() {
+        return this.text;
+    }
+
+    public HashMap<String, Button> getButtons() {
+        return this.Buttons;
+    }
+
+    public void setButtons(final HashMap<String, Button> buttons) {
+        this.Buttons = buttons;
+    }
+
     public void draw(Graphics g)
     {
-        if (visible)
+        if (isVisible)
         {
-            g.setFont(FontText);
-            g.drawRect(Border.getX(), Border.getY(), Border.getWidth(), Border.getHeight());
-            String texts=Text;
-                for (int i = 0; i < CountLineInPage; i++)
+            Page CurrentPage = text.get(NumberCurrentPage);
+            int XPos = (int) PlaceOutputText.getX(), YPos = (int) PlaceOutputText.getY();
+            g.setFont(CurrentPage.getFontText());
+            Iterator<String> Line = CurrentPage.getText().iterator();
+            while (Line.hasNext())
+            {
+
+                g.drawString(Line.next(), XPos, YPos);
+                YPos += CurrentPage.getFontText().getLineHeight();
+            }
+            g.drawRect(Border.getX(),Border.getY(),Border.getWidth(),Border.getHeight());
+            Iterator<Button> CurrentButton=Buttons.values().iterator();
+            while (CurrentButton.hasNext())
+            {
+                Button button=CurrentButton.next();
+                if (button.isVisible())
                 {
-
-
-                    int p1 = i * CountCharInLine;
-                    int p2 = i * CountCharInLine + CountCharInLine;
-
-                    int PageFirst=CurrentPage*(CountLineInPage)*CountCharInLine;
-                    int PageEnd=(CurrentPage+1)*(CountLineInPage)*CountCharInLine;
-                    int length=Text.length();
-                    if (length<(PageFirst))
-                        break;
-                    if (PageEnd>texts.length())
-                        PageEnd=texts.length()-1;
-                    if (p2 > PageEnd-PageFirst) {
-                        p2 = PageEnd-PageFirst;
-                    }
-                    System.out.println("Индекс:" + i + " Число символов в строке:" + CountCharInLine);
-                    System.out.println("p1:" + p1 + "  p2:" + p2 + "Последний индекс строки:" + (texts.length()));
-                    System.out.println("PageFirst:"+PageFirst+" PageEnd:"+PageEnd );
-                    String CurrentText = texts.substring(PageFirst,PageEnd)
-                             .substring(p1, p2);
-
-                    g.drawString(CurrentText.trim(), LocationText.getX(), LocationText.getY() + i * FontText.getLineHeight());
-
+                    button.draw(g);
                 }
-
-                if (CurrentPage< (CountPage))
-                g.drawString("Next", ButtonNextPage.getX(),
-                        ButtonNextPage.getY());
-                else
-                {
-                    g.drawString("YES", ButtonYes.getX(),
-                            ButtonYes.getY());
-                    g.drawString("NO", ButtonNo.getX(),
-                            ButtonNo.getY());
-                }
-
+            }
 
         }
     }
+
 }

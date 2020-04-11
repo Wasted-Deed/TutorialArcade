@@ -1,7 +1,9 @@
 package Main;
 
+import SystemDialogue.Button;
 import SystemDialogue.ConditionChoice;
 import SystemDialogue.Dialogue;
+import SystemDialogue.Page;
 import Unit.*;
 import Utils.CheckInput;
 import Utils.ImageLoader;
@@ -15,7 +17,6 @@ import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -51,10 +52,37 @@ public class PlayWindow extends BasicGameState {
         screenWidth = gameContainer.getWidth();
         screenHeight = gameContainer.getHeight();
 
-        TrueTypeFont FontText=new TrueTypeFont(new java.awt.Font("Text", java.awt.Font.ROMAN_BASELINE,10),false);
+        TrueTypeFont FontText=new TrueTypeFont(new java.awt.Font("Text", java.awt.Font.ROMAN_BASELINE,15),false);
+        Page page1=new Page();
+        page1.addLine("     HELLO");
+        page1.addLine("2             line");
+        Page page2=new Page();
+        page2.addLine("1 line");
+        page2.addLine("2 line");
+        Page page3=new Page();
+        page3.addLine("1 line");
+        page3.addLine("2 line");
+        page3.addLine("3 line");
+        page3.addLine("4 line");
+        page3.addLine("5 line");
+        page3.addLine("            Goodbye!!");
 
-        dialogue.setFontText(FontText);
-        dialogue.setText("1 2 3  4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 ");
+
+        dialogue.addPage(page1);
+        dialogue.addPage(page2);
+        dialogue.addPage(page3);
+        dialogue.SetFontAllPage(FontText) ;
+        dialogue.setDistancesFromTextToBorder(10);
+        dialogue.addButton(new Button("NEXT",ConditionChoice.NEXT));
+        dialogue.getButtons().get("NEXT").setFontName(FontText);
+        dialogue.getButtons().get("NEXT").setVisible(true);
+        dialogue.getButtons().get("NEXT").getLocation().setHeight(FontText.getLineHeight());
+        dialogue.addButton(new Button("YES",ConditionChoice.YES));
+        dialogue.getButtons().get("YES").setFontName(FontText);
+        dialogue.getButtons().get("YES").getLocation().setHeight(FontText.getLineHeight());
+        dialogue.addButton(new Button("NO",ConditionChoice.YES));
+         dialogue.getButtons().get("NO").setFontName(FontText);
+         dialogue.getButtons().get("NO").getLocation().setHeight(FontText.getLineHeight());
         this.loader = new ImageLoader();
         this.loader.LoadImage(Sprites.PLAYER_L, "resources/images/player.jpg");
         this.loader.LoadImage(Sprites.FISH_L, "resources/images/fish.jpg");
@@ -64,17 +92,17 @@ public class PlayWindow extends BasicGameState {
         NewEnemy.setImageR((Image)this.loader.getImagesMap().get(Sprites.FISH_L));
         NewEnemy.getImageR().setRotation(180.0F);
         this.enemy.add(NewEnemy);
-        this.player = new Player(3, 5.0F, new Rectangle(30.0F, PLACE_BLOCKS_Y-180,
+        this.player = new Player(3, 5.0F, new Rectangle(250.0F, PLACE_BLOCKS_Y-180,
                 (float)((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L)).getWidth(),
                 (float)((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L)).getHeight()), 2);
         this.player.setmJumpSpeed(3.0F);
         this.player.setJump(false);
         this.player.getListForce().put("Gravity", new Vector2f(0.0F, 10.0F));
         this.player.setImageR((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L));
-        map.addBuilding(player.getLocation().getX()+50, (float) 125.6);
-        map.addBuilding(player.getLocation().getX()+50, (float)PLACE_BLOCKS_Y+16);
-        map.addBuilding(player.getLocation().getX()+150, (float)PLACE_BLOCKS_Y-50);
-        map.addBuilding(player.getLocation().getX()-50, (float)PLACE_BLOCKS_Y+17);
+        map.addBuilding(80, (float) 125.6);
+        map.addBuilding(80, (float)PLACE_BLOCKS_Y+16);
+        map.addBuilding(180, (float)PLACE_BLOCKS_Y-50);
+        map.addBuilding(-20, (float)PLACE_BLOCKS_Y+17);
     }
 
     @Override
@@ -84,9 +112,6 @@ public class PlayWindow extends BasicGameState {
             map.move(player.getmWalkSpeed());
         else if (input.isKeyDown(Input.KEY_RIGHT))
             map.move(-player.getmWalkSpeed());*/
-
-
-
         ArrayList<Unit> AllUnit = new ArrayList();
         AllUnit.addAll(this.enemy);
         AllUnit.add(this.player);
@@ -108,9 +133,14 @@ public class PlayWindow extends BasicGameState {
             if (player.checkCollision(CurrentEnemy.getLocation()))
             {
                 CollisionWithAnyEnemy=true;
-                dialogue.setLocation(CurrentEnemy.getLocation().getX(),CurrentEnemy.getLocation().getY()-dialogue.getLocationText().getHeight(),CurrentEnemy.getLocation().getWidth());
-                if (dialogue.getCondition().equals(ConditionChoice.YES))
-                    CurrentEnemy.SetSpeed(5/ 10.0F, 0.0F);
+                dialogue.setMaxY((int) CurrentEnemy.getLocation().getY());
+                if (dialogue.isVisible()==false)
+                {
+                    dialogue.setPlaceOutputText(new Rectangle(CurrentEnemy.getLocation().getX(), CurrentEnemy.getLocation().getY() - 100,
+                            CurrentEnemy.getLocation().getWidth(), 100));
+
+                }
+                  if (dialogue.getCondition()==ConditionChoice.YES) CurrentEnemy.SetSpeed(5/ 10.0F, 0.0F);
             }
             CurrentEnemy.behave(this.enemy);
         }
@@ -118,8 +148,7 @@ public class PlayWindow extends BasicGameState {
           dialogue.setVisible(true);
         else dialogue.setVisible(false);
         dialogue.checkClickOnButton((new CheckInput(gameContainer)).CheckClickMouse());
-        dialogue.update();
-
+        dialogue.udpate();
         this.player.setInput((new CheckInput(gameContainer)).CheckPlayer());
         this.player.behave();
 

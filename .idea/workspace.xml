@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="11237784-26fc-40f8-b6f8-74e2cc2d1993" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SystemDialogue/Button.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/SystemDialogue/ConditionChoice.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/SystemDialogue/Dialogue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SystemDialogue/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Main/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Main/Game.class" afterDir="false" />
@@ -30,6 +32,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ocean/GameMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/GameMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ocean/TypeBuilding.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/TypeBuilding.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/slick2d1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/slick2d1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/PlayWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/PlayWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Unit/Ai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Ai.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Unit/ChechInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/CheckInput.java" afterDir="false" />
@@ -63,8 +66,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -141,6 +144,11 @@
       <workItem from="1575540876375" duration="1235000" />
       <workItem from="1579451426442" duration="431000" />
       <workItem from="1586081029442" duration="24256000" />
+      <workItem from="1586432212657" duration="5367000" />
+      <workItem from="1586455804227" duration="25438000" />
+      <workItem from="1586540161996" duration="15870000" />
+      <workItem from="1586593149173" duration="6316000" />
+      <workItem from="1586613280878" duration="29323000" />
     </task>
     <servers />
   </component>
@@ -165,10 +173,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1579451586219" />
-    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser" timestamp="1586084302684">
+    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser" timestamp="1586615322211">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1586084302684" />
+    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1586615322211" />
     <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579451584831">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -181,57 +189,52 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="119" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1586094881320" />
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1586124338356">
+    <state width="1323" height="260" key="GridCell.Tab.0.bottom" timestamp="1586643282582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586124338356" />
-    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1586124338356">
+    <state width="1323" height="260" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586643282582" />
+    <state width="1323" height="260" key="GridCell.Tab.0.center" timestamp="1586643282581">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586124338356" />
-    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1586124338356">
+    <state width="1323" height="260" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586643282581" />
+    <state width="1323" height="260" key="GridCell.Tab.0.left" timestamp="1586643282581">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586124338356" />
-    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1586124338356">
+    <state width="1323" height="260" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586643282581" />
+    <state width="1323" height="260" key="GridCell.Tab.0.right" timestamp="1586643282581">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586124338356" />
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1586124338357">
+    <state width="1323" height="260" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586643282581" />
+    <state width="1323" height="260" key="GridCell.Tab.1.bottom" timestamp="1586643282582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586124338357" />
-    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1586124338356">
+    <state width="1323" height="260" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586643282582" />
+    <state width="1323" height="260" key="GridCell.Tab.1.center" timestamp="1586643282582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586124338356" />
-    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1586124338356">
+    <state width="1323" height="260" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586643282582" />
+    <state width="1323" height="260" key="GridCell.Tab.1.left" timestamp="1586643282582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586124338356" />
-    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1586124338357">
+    <state width="1323" height="260" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586643282582" />
+    <state width="1323" height="260" key="GridCell.Tab.1.right" timestamp="1586643282582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586124338357" />
-    <state x="680" y="166" key="run.anything.popup" timestamp="1586119232012">
+    <state width="1323" height="260" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586643282582" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1586613277999">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="680" y="166" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1586119232012" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586107956830">
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586613277999" />
+    <state x="680" y="166" key="run.anything.popup" timestamp="1586518601429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586107956830" />
+    <state x="680" y="166" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1586518601429" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586435556553">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586435556553" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SystemDialogue/Dialogue.java</url>
-          <line>100</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="CurrentEnemy.damage" />
