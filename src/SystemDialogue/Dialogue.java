@@ -12,15 +12,16 @@ import java.util.Iterator;
 
 public class Dialogue
 {
-    ArrayList<Page> text;//Коллекция страниц
-    Rectangle PlaceOutputText;//Позиция вывода текста
-    Rectangle  Border;//Позиция рамки
-    Integer MaxY;//Ограничение.Значнеие.эниже которого диалог не должен находится
+    //:NOTE: UTF-8; РџРµСЂРµРјРµРЅРЅС‹Рµ РЅР° СЂР°Р·РЅС‹С… СЃС‚СЂРѕРєР°С…; РџРѕ СѓР±С‹РІР°РЅРёСЋ СЂР°Р·РјРµСЂРѕРІ РєР»Р°СЃСЃРѕРІ-> Р·Р°С‚РµРј РїРѕ СѓР±С‹РІР°РЅРёСЋ СЂР°Р·РјРµСЂРѕРІ С‚РёРїРѕРІ.
+    ArrayList<Page> text;//ГЉГ®Г«Г«ГҐГЄГ¶ГЁГї Г±ГІГ°Г Г­ГЁГ¶
+    Rectangle PlaceOutputText;//ГЏГ®Г§ГЁГ¶ГЁГї ГўГ»ГўГ®Г¤Г  ГІГҐГЄГ±ГІГ 
+    Rectangle  Border;//ГЏГ®Г§ГЁГ¶ГЁГї Г°Г Г¬ГЄГЁ
+    Integer MaxY;//ГЋГЈГ°Г Г­ГЁГ·ГҐГ­ГЁГҐ.Г‡Г­Г Г·Г­ГҐГЁГҐ.ГЅГ­ГЁГ¦ГҐ ГЄГ®ГІГ®Г°Г®ГЈГ® Г¤ГЁГ Г«Г®ГЈ Г­ГҐ Г¤Г®Г«Г¦ГҐГ­ Г­Г ГµГ®Г¤ГЁГІГ±Гї
     int MaxCountPage,NumberCurrentPage;
     boolean isVisible=false;
     ConditionChoice condition;
-    HashMap<String,Button> Buttons;//Коллекция кнопок
-    int DistancesFromTextToBorder=0;//Расстояние между рамкой и текстом
+    HashMap<String,Button> Buttons;//ГЉГ®Г«Г«ГҐГЄГ¶ГЁГї ГЄГ­Г®ГЇГ®ГЄ
+    int DistancesFromTextToBorder=0;//ГђГ Г±Г±ГІГ®ГїГ­ГЁГҐ Г¬ГҐГ¦Г¤Гі Г°Г Г¬ГЄГ®Г© ГЁ ГІГҐГЄГ±ГІГ®Г¬
 
     public int getDistancesFromTextToBorder() {
         return this.DistancesFromTextToBorder;
@@ -56,7 +57,7 @@ public class Dialogue
 
         this.isVisible = visible;
     }
-//Задать единый шрифт всем страницам
+//Г‡Г Г¤Г ГІГј ГҐГ¤ГЁГ­Г»Г© ГёГ°ГЁГґГІ ГўГ±ГҐГ¬ Г±ГІГ°Г Г­ГЁГ¶Г Г¬
     public void SetFontAllPage(Font FontPages)
     {
         Iterator<Page> Pages=text.iterator();
@@ -108,7 +109,7 @@ public class Dialogue
 
                 break;
         }
-        //Если конечная страница - установить другие кнопки
+        //Г…Г±Г«ГЁ ГЄГ®Г­ГҐГ·Г­Г Гї Г±ГІГ°Г Г­ГЁГ¶Г  - ГіГ±ГІГ Г­Г®ГўГЁГІГј Г¤Г°ГіГЈГЁГҐ ГЄГ­Г®ГЇГЄГЁ
         if ((NumberCurrentPage)>=(text.size()-1))
         {
             Buttons.get("NO").setVisible(true);
@@ -141,7 +142,7 @@ public  void CheckBellowMaxY()
         }
     }
 }
-//Изменение положения по Y в зависимости от данных( количесство строк)
+//Г€Г§Г¬ГҐГ­ГҐГ­ГЁГҐ ГЇГ®Г«Г®Г¦ГҐГ­ГЁГї ГЇГ® Y Гў Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г®ГІ Г¤Г Г­Г­Г»Гµ( ГЄГ®Г«ГЁГ·ГҐГ±Г±ГІГўГ® Г±ГІГ°Г®ГЄ)
 public void updateHeight()
 {
     Page CurrentPage=text.get(NumberCurrentPage);
@@ -160,7 +161,7 @@ public void updateHeight()
         Border.setY(Border.getY()+Math.abs(difference));
     }
 }
-//Изменение положения по Y в зависимости от данных( длина строк)
+//Г€Г§Г¬ГҐГ­ГҐГ­ГЁГҐ ГЇГ®Г«Г®Г¦ГҐГ­ГЁГї ГЇГ® Y Гў Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г®ГІ Г¤Г Г­Г­Г»Гµ( Г¤Г«ГЁГ­Г  Г±ГІГ°Г®ГЄ)
 public void updateWidth()
 {
     Page CurrentPage=text.get(NumberCurrentPage);
@@ -170,8 +171,8 @@ public void updateWidth()
        if (CurrentPage.GetWidthline(i)>Maxlength)
            Maxlength=CurrentPage.GetWidthline(i);
     }
-    //Адаптация  ширины диалога
-    System.out.println("Ширина строки"+Maxlength+"Ширина вывода");
+    //ГЂГ¤Г ГЇГІГ Г¶ГЁГї  ГёГЁГ°ГЁГ­Г» Г¤ГЁГ Г«Г®ГЈГ 
+    System.out.println("ГГЁГ°ГЁГ­Г  Г±ГІГ°Г®ГЄГЁ"+Maxlength+"ГГЁГ°ГЁГ­Г  ГўГ»ГўГ®Г¤Г ");
     int difference= (int) ((Maxlength-PlaceOutputText.getWidth())/2);
     if (difference>=0)
     {
@@ -187,19 +188,21 @@ public void updateWidth()
         Border.setWidth(Border.getWidth()-2*difference);
         Border.setX(Border.getX()+difference);
     }
-    System.out.println("Разица между бордюром и выводом:"+(Border.getMaxX()-PlaceOutputText.getMaxX()));
-    System.out.println("Бордюр:"+Border.getMaxX());
+    System.out.println("ГђГ Г§ГЁГ¶Г  Г¬ГҐГ¦Г¤Гі ГЎГ®Г°Г¤ГѕГ°Г®Г¬ ГЁ ГўГ»ГўГ®Г¤Г®Г¬:"+(Border.getMaxX()-PlaceOutputText.getMaxX()));
+    System.out.println("ГЃГ®Г°Г¤ГѕГ°:"+Border.getMaxX());
 }
-//Функция,которая обновляет положение всех элементов диалога ,используя updateHeight() и updateWidth()
+//Г”ГіГ­ГЄГ¶ГЁГї,ГЄГ®ГІГ®Г°Г Гї Г®ГЎГ­Г®ГўГ«ГїГҐГІ ГЇГ®Г«Г®Г¦ГҐГ­ГЁГҐ ГўГ±ГҐГµ ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў Г¤ГЁГ Г«Г®ГЈГ  ,ГЁГ±ГЇГ®Г«ГјГ§ГіГї updateHeight() ГЁ updateWidth()
     public void UpdatePosition()
     {
         updateHeight();
         updateWidth();
-        //Обновление положения кнопок
+        //ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ ГЇГ®Г«Г®Г¦ГҐГ­ГЁГї ГЄГ­Г®ГЇГ®ГЄ
         Iterator<Button> CurrentButton=Buttons.values().iterator();
             while (CurrentButton.hasNext())
             {
                 Button button=CurrentButton.next();
+             //:NOTE: РєРѕРїРёРїР°СЃС‚Р° : Р»СѓС‡С€Рµ СЃРґРµР»Р°С‚СЊ Map, Сѓ button name - Enum - РІРјРµСЃС‚Рѕ String,
+                //РІ Map С…СЂР°РЅСЏС‚СЃСЏ СЃРїРµС†РёС„РёРєР°С†РёРё РєРЅРѕРїРєРё.
                 if(button.getName().equals("NEXT"))
                 {
                     button.getLocation().setLocation(Border.getX(),PlaceOutputText.getMaxY());
@@ -223,7 +226,7 @@ public void updateWidth()
 
                 }else
                     {
-                        //Проверка на то,что кнопка лежит внутри рамки
+                        //ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГІГ®,Г·ГІГ® ГЄГ­Г®ГЇГЄГ  Г«ГҐГ¦ГЁГІ ГўГ­ГіГІГ°ГЁ Г°Г Г¬ГЄГЁ
                      int difference = (int) (button.getLocation().getMaxY()-Border.getMaxY());
                     if (difference>=0)
                     {
@@ -249,7 +252,7 @@ public void updateWidth()
     public void setPlaceOutputText(final Rectangle placeOutputText)
     {
         this.PlaceOutputText = placeOutputText;
-        //Установка положения рамки
+        //Г“Г±ГІГ Г­Г®ГўГЄГ  ГЇГ®Г«Г®Г¦ГҐГ­ГЁГї Г°Г Г¬ГЄГЁ
         if (DistancesFromTextToBorder!=0)
         {
             Border.setX(PlaceOutputText.getX()-DistancesFromTextToBorder);
