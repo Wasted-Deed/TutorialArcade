@@ -14,17 +14,19 @@ public class CustomFont implements Font
 {
 
     private final  HashMap<String, Image> FONT_COLLECTION;
+    //:NOTE: UTF-8
     private final String[] ALPHABET_ARRAY =
             {" ","1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
             ".",",", "!", "?", "(", ")", "'", " \" ", "/", "|", "\\", ":",";",
-            "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�",
-            "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�",
-            "�", "�", "�", "�", "�", "�", "�",
-            "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�",
-            "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�", "�",
-            "�", "�", "�", "�", "�", "�", "�"};
+            "À", "Á", "Â", "Ã", "Ä", "Å", "¨", "Æ", "Ç", "È", "É", "Ê", "Ë",
+            "Ì", "Í", "Î", "Ï", "Ð", "Ñ", "Ò", "Ó", "Ô", "Õ", "Ö", "×", "Ø",
+            "Ù", "Ú", "Û", "Ü", "Ý", "Þ", "ß",
+            "à", "á", "â", "ã", "ä", "å", "¸", "æ", "ç", "è", "é", "ê", "ë",
+            "ì", "í", "î", "ï", "ð", "ñ", "ò", "ó", "ô", "õ", "ö", "÷", "ø",
+            "ù", "ú", "û", "ü", "ý", "þ", "ÿ"};
     private final HashMap<String, Integer> ALPHABET;
     SpriteSheet spriteSheet;
+    //:NOTE: Переменные должны быть на разных строках (codestyle) + переменные в Java - с маленькой буквы (camelCase)
     int Heigth,Width;
 
     public CustomFont(Image font,int Wsize,int Hsize)
@@ -34,13 +36,16 @@ public class CustomFont implements Font
         this.Heigth=Hsize;
         this.FONT_COLLECTION = new HashMap<>();
         ALPHABET = new HashMap<>();
+        //:NOTE: Лучше сделать константы для всех подгонов
         spriteSheet=new SpriteSheet(font,font.getWidth()/13,font.getHeight()/8);
     }
     public void loadBasicFont()
     {
         int count=0;
 
-        System.out.println("����������="+spriteSheet.getVerticalCount()+" ����="+spriteSheet.getHorizontalCount());
+        System.out.println("ãîðèçîíòàë="+spriteSheet.getVerticalCount()+" âåðò="+spriteSheet.getHorizontalCount());
+        //:NOTE: Не хватает пробелов + в Java скобки в основном ставят так: func() {
+        //                                                                  }
         for (int k=0;k<spriteSheet.getVerticalCount();k++)
         {
             if (count>=ALPHABET_ARRAY.length)
@@ -52,7 +57,7 @@ public class CustomFont implements Font
 
 
                 FONT_COLLECTION.put(ALPHABET_ARRAY[count], spriteSheet.getSprite(i, k).getScaledCopy((int)Width, (int) Math.ceil(Heigth)));
-                if (ALPHABET_ARRAY[count].equals("�")||ALPHABET_ARRAY[count].equals("�")||ALPHABET_ARRAY[count].equals("0"))
+                if (ALPHABET_ARRAY[count].equals("ß")||ALPHABET_ARRAY[count].equals("ÿ")||ALPHABET_ARRAY[count].equals("0"))
                 {
                     count++;
                     break;
