@@ -1,13 +1,11 @@
 package Main;
 
-import SystemDialogue.Button;
-import SystemDialogue.ConditionChoice;
-import SystemDialogue.Dialogue;
-import SystemDialogue.Page;
+import SystemDialogue.*;
 import Unit.*;
 import Utils.CheckInput;
 import Utils.ImageLoader;
 import Utils.Physics;
+import Utils.Sprites;
 import ocean.GameMap;
 import org.newdawn.slick.*;
 import org.newdawn.slick.Graphics;
@@ -51,28 +49,28 @@ public class PlayWindow extends BasicGameState {
         map = new GameMap(gameContainer.getWidth());
         screenWidth = gameContainer.getWidth();
         screenHeight = gameContainer.getHeight();
-
-        TrueTypeFont FontText=new TrueTypeFont(new java.awt.Font("Text", java.awt.Font.ROMAN_BASELINE,15),false);
+        TrueTypeFont FontText=new TrueTypeFont(new java.awt.Font("Text", java.awt.Font.LAYOUT_LEFT_TO_RIGHT,10),false);
+        this.loader = new ImageLoader();
+        this.loader.LoadImage(Sprites.FONT_0, "resources/images/font_2.jpg");
+        CustomFont font=new CustomFont(loader.getImagesMap().get(Sprites.FONT_0),10,10) ;
+        font.loadBasicFont();
         Page page1=new Page();
-        page1.addLine("     HELLO");
-        page1.addLine("2             line");
-        Page page2=new Page();
-        page2.addLine("1 line");
-        page2.addLine("2 line");
+        //page1.addLine("1");
+        page1.addLine("1234567890");
+        page1.addLine(".,!?()'\"/|\\:;");
+        page1.addLine("ÀÁÂÃÄÅ¨ÆÇÈÉÊË");
+        page1.addLine("ÌÍÎÏÐÑÒÓÔÕÖØ");
+        page1.addLine("ÙÚÛÞß");
         Page page3=new Page();
-        page3.addLine("1 line");
-        page3.addLine("2 line");
-        page3.addLine("3 line");
-        page3.addLine("4 line");
-        page3.addLine("5 line");
-        page3.addLine("            Goodbye!!");
-
-
+        page3.addLine("1ëèíèÿ");
+        page3.addLine("1 ëèíèÿ");
+        page3.addLine("3 ëèíèÿ");
+        page3.addLine("4 ëèíèÿ");
+        page3.addLine("5 ëèíèÿ");
         dialogue.addPage(page1);
-        dialogue.addPage(page2);
         dialogue.addPage(page3);
-        dialogue.SetFontAllPage(FontText) ;
-        dialogue.setDistancesFromTextToBorder(10);
+        dialogue.SetFontAllPage(font) ;
+        dialogue.setDistancesFromTextToBorder(3);
         dialogue.addButton(new Button("NEXT",ConditionChoice.NEXT));
         dialogue.getButtons().get("NEXT").setFontName(FontText);
         dialogue.getButtons().get("NEXT").setVisible(true);
@@ -83,6 +81,7 @@ public class PlayWindow extends BasicGameState {
         dialogue.addButton(new Button("NO",ConditionChoice.YES));
          dialogue.getButtons().get("NO").setFontName(FontText);
          dialogue.getButtons().get("NO").getLocation().setHeight(FontText.getLineHeight());
+
         this.loader = new ImageLoader();
         this.loader.LoadImage(Sprites.PLAYER_L, "resources/images/player.jpg");
         this.loader.LoadImage(Sprites.FISH_L, "resources/images/fish.jpg");

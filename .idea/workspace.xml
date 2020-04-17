@@ -5,6 +5,7 @@
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/SystemDialogue/Button.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/SystemDialogue/ConditionChoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SystemDialogue/CustomFont.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/SystemDialogue/Dialogue.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/SystemDialogue/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -23,7 +24,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Physics.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Sprites.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Sprites.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Sprites.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/TypeInput.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Unit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ocean/Behaviour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/Behaviour.class" afterDir="false" />
@@ -39,6 +40,7 @@
       <change beforePath="$PROJECT_DIR$/src/Unit/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/ImageLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Unit/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Physics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Unit/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unit/Sprites.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Sprites.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Unit/TypeInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/TypeInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,6 +151,10 @@
       <workItem from="1586540161996" duration="15870000" />
       <workItem from="1586593149173" duration="6316000" />
       <workItem from="1586613280878" duration="29323000" />
+      <workItem from="1586935129958" duration="1556000" />
+      <workItem from="1586955115360" duration="2367000" />
+      <workItem from="1587022965999" duration="13770000" />
+      <workItem from="1587053339970" duration="30872000" />
     </task>
     <servers />
   </component>
@@ -173,10 +179,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1579451586219" />
-    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser" timestamp="1586615322211">
+    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser" timestamp="1586936610952">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1586615322211" />
+    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1586936610952" />
     <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579451584831">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -189,52 +195,66 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="119" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1586094881320" />
-    <state width="1323" height="260" key="GridCell.Tab.0.bottom" timestamp="1586643282582">
+    <state width="1323" height="289" key="GridCell.Tab.0.bottom" timestamp="1587119549218">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586643282582" />
-    <state width="1323" height="260" key="GridCell.Tab.0.center" timestamp="1586643282581">
+    <state width="1323" height="289" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587119549218" />
+    <state width="1323" height="289" key="GridCell.Tab.0.center" timestamp="1587119549218">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586643282581" />
-    <state width="1323" height="260" key="GridCell.Tab.0.left" timestamp="1586643282581">
+    <state width="1323" height="289" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587119549218" />
+    <state width="1323" height="289" key="GridCell.Tab.0.left" timestamp="1587119549217">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586643282581" />
-    <state width="1323" height="260" key="GridCell.Tab.0.right" timestamp="1586643282581">
+    <state width="1323" height="289" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587119549217" />
+    <state width="1323" height="289" key="GridCell.Tab.0.right" timestamp="1587119549218">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586643282581" />
-    <state width="1323" height="260" key="GridCell.Tab.1.bottom" timestamp="1586643282582">
+    <state width="1323" height="289" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587119549218" />
+    <state width="1323" height="260" key="GridCell.Tab.1.bottom" timestamp="1587118958869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586643282582" />
-    <state width="1323" height="260" key="GridCell.Tab.1.center" timestamp="1586643282582">
+    <state width="1323" height="260" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587118958869" />
+    <state width="1323" height="260" key="GridCell.Tab.1.center" timestamp="1587118958869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586643282582" />
-    <state width="1323" height="260" key="GridCell.Tab.1.left" timestamp="1586643282582">
+    <state width="1323" height="260" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587118958869" />
+    <state width="1323" height="260" key="GridCell.Tab.1.left" timestamp="1587118958869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586643282582" />
-    <state width="1323" height="260" key="GridCell.Tab.1.right" timestamp="1586643282582">
+    <state width="1323" height="260" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587118958869" />
+    <state width="1323" height="260" key="GridCell.Tab.1.right" timestamp="1587118958869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586643282582" />
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1586613277999">
+    <state width="1323" height="260" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587118958869" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1587053396718">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586613277999" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587053396718" />
     <state x="680" y="166" key="run.anything.popup" timestamp="1586518601429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="680" y="166" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1586518601429" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586435556553">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1587117604169">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586435556553" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587117604169" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/lib/slick.jar!/org/newdawn/slick/SpriteSheet.class</url>
+          <line>105</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SystemDialogue/CustomFont.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="CurrentEnemy.damage" />

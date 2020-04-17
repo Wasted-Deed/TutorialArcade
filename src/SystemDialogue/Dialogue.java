@@ -164,27 +164,31 @@ public void updateHeight()
 public void updateWidth()
 {
     Page CurrentPage=text.get(NumberCurrentPage);
+    int Maxlength=0;
     for (int i=0;i<CurrentPage.getText().size();i++)
     {
-        //Адаптация  ширины диалога
-        int difference= (int) ((CurrentPage.GetWidthline(i)-PlaceOutputText.getWidth())/2);
-        if (difference>=0)
-        {
-            PlaceOutputText.setWidth(2*difference+PlaceOutputText.getWidth());
-            PlaceOutputText.setX(PlaceOutputText.getX()-difference);
-            Border.setWidth(2*difference+Border.getWidth());
-            Border.setX(Border.getX()-difference);
-        }else
-        {
-            difference=Math.abs(difference);
-            PlaceOutputText.setWidth(PlaceOutputText.getWidth()-2*difference);
-            PlaceOutputText.setX(PlaceOutputText.getX()+difference);
-            Border.setWidth(Border.getWidth()-2*difference);
-            Border.setX(Border.getX()+difference);
-        }
-        System.out.println("4");
-
+       if (CurrentPage.GetWidthline(i)>Maxlength)
+           Maxlength=CurrentPage.GetWidthline(i);
     }
+    //Адаптация  ширины диалога
+    System.out.println("Ширина строки"+Maxlength+"Ширина вывода");
+    int difference= (int) ((Maxlength-PlaceOutputText.getWidth())/2);
+    if (difference>=0)
+    {
+        PlaceOutputText.setWidth(2*difference+PlaceOutputText.getWidth());
+        PlaceOutputText.setX(PlaceOutputText.getX()-difference);
+        Border.setWidth(2*difference+Border.getWidth());
+        Border.setX(Border.getX()-difference);
+    }else
+    {
+        difference=Math.abs(difference);
+        PlaceOutputText.setWidth(PlaceOutputText.getWidth()-2*difference);
+        PlaceOutputText.setX(PlaceOutputText.getX()+difference);
+        Border.setWidth(Border.getWidth()-2*difference);
+        Border.setX(Border.getX()+difference);
+    }
+    System.out.println("Разица между бордюром и выводом:"+(Border.getMaxX()-PlaceOutputText.getMaxX()));
+    System.out.println("Бордюр:"+Border.getMaxX());
 }
 //Функция,которая обновляет положение всех элементов диалога ,используя updateHeight() и updateWidth()
     public void UpdatePosition()
@@ -287,6 +291,8 @@ public void updateWidth()
 
     public void draw(Graphics g)
     {
+      //  Page CurrentPage = text.get(NumberCurrentPage);
+       // CurrentPage.getFontText().drawString(100, 100,"2");
         if (isVisible)
         {
             Page CurrentPage = text.get(NumberCurrentPage);
@@ -295,8 +301,8 @@ public void updateWidth()
             Iterator<String> Line = CurrentPage.getText().iterator();
             while (Line.hasNext())
             {
-
-                g.drawString(Line.next(), XPos, YPos);
+                String text=Line.next();
+                CurrentPage.getFontText().drawString(XPos, YPos,text);
                 YPos += CurrentPage.getFontText().getLineHeight();
             }
             g.drawRect(Border.getX(),Border.getY(),Border.getWidth(),Border.getHeight());

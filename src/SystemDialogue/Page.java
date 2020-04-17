@@ -21,7 +21,7 @@ public class Page
     }
    public  int GetWidthline(int NumberLine)
    {
-
+        //System.out.println("Ширина строки="+FontText.getWidth(text.get(NumberLine)));
       return FontText.getWidth(text.get(NumberLine));
    }
    public  int GetHeightPage()

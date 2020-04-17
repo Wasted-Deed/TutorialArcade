@@ -2,7 +2,6 @@ package Utils;
 
 import java.util.HashMap;
 
-import Unit.Sprites;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
