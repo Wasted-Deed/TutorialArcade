@@ -14,12 +14,12 @@ public class CustomFont implements Font
     private final String[] ALPHABET_ARRAY =
             {" ","1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
             ".",",", "!", "?", "(", ")", "'", " \" ", "/", "|", "\\", ":",";",
-                    "Рђ", "Р‘", "Р’", "Р“", "Р”", "Р•", "РЃ", "Р–", "Р—", "Р", "Р™", "Рљ", "Р›",
-                    "Рњ", "Рќ", "Рћ", "Рџ", "Р ", "РЎ", "Рў", "РЈ", "Р¤", "РҐ", "Р¦", "Р§", "РЁ",
-                    "Р©", "РЄ", "Р«", "Р¬", "Р­", "Р®", "РЇ",
-                    "Р°", "Р±", "РІ", "Рі", "Рґ", "Рµ", "С‘", "Р¶", "Р·", "Рё", "Р№", "Рє", "Р»",
-                    "Рј", "РЅ", "Рѕ", "Рї", "СЂ", "СЃ", "С‚", "Сѓ", "С„", "С…", "С†", "С‡", "С€",
-                    "С‰", "СЉ", "С‹", "СЊ", "СЌ", "СЋ", "СЏ"};
+                    "А", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "Й", "К", "Л",
+                    "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш",
+                    "Щ", "Ъ", "Ы", "Ь", "Э", "Ю", "Я",
+                    "а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л",
+                    "м", "н", "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш",
+                    "щ", "ъ", "ы", "ь", "э", "ю", "я"};
     int heigth, width;
     final int  CountWordsInLine=13;
     final int  CountWordsInHeight=8;
@@ -32,9 +32,10 @@ public class CustomFont implements Font
         this.FONT_COLLECTION = new HashMap<>();
         spriteSheet=new SpriteSheet(font,font.getWidth()/CountWordsInLine,font.getHeight()/CountWordsInHeight);
     }
-    public void loadBasicFont() {
+    public void loadBasicFont()
+    {
         int count=0;
-        //:NOTE: РќРµ С…РІР°С‚Р°РµС‚ РїСЂРѕР±РµР»РѕРІ + РІ Java СЃРєРѕР±РєРё РІ РѕСЃРЅРѕРІРЅРѕРј СЃС‚Р°РІСЏС‚ С‚Р°Рє: func() {
+        //:NOTE: Не хватает пробелов + в Java скобки в основном ставят так: func() {
         //                                                                  }
         for (int k=0;k<spriteSheet.getVerticalCount();k++) {
             if (count>=ALPHABET_ARRAY.length)
@@ -44,7 +45,7 @@ public class CustomFont implements Font
             for (int i = 0; i < spriteSheet.getHorizontalCount(); i++)
             {
                 FONT_COLLECTION.put(ALPHABET_ARRAY[count], spriteSheet.getSprite(i, k).getScaledCopy((int) width, (int) Math.ceil(heigth)));
-                if (ALPHABET_ARRAY[count].equals("Гџ")||ALPHABET_ARRAY[count].equals("Гї")||ALPHABET_ARRAY[count].equals("0"))
+                if (ALPHABET_ARRAY[count].equals("0")||ALPHABET_ARRAY[count].equals("Я")||ALPHABET_ARRAY[count].equals("я"))
                 {
                     count++;
                     break;
@@ -52,7 +53,8 @@ public class CustomFont implements Font
                 count++;
             }
         }
-
+    int k=0;
+        k++;
     }
 
     @Override

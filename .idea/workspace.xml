@@ -2,13 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11237784-26fc-40f8-b6f8-74e2cc2d1993" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/SystemDialogue/ButtonName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/EN3JygHU8AAtQdV.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/META-INF/slick2d1.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Main/PlayWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Main/PlayWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/SpriteGraffiti-230x300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/SystemDialogue/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/SystemDialogue/Button.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/SystemDialogue/CustomFont.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/SystemDialogue/CustomFont.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/SystemDialogue/Dialogue$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/SystemDialogue/Dialogue$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/SystemDialogue/Dialogue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/SystemDialogue/Dialogue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/SystemDialogue/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/SystemDialogue/Page.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/ChechInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/ChechInput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/ImageLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/ImageLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Physics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Physics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/TypeInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/TypeInput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Utils/Sprites.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Utils/Sprites.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/font.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/font.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/fontv2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/fontv2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/img_abc-257x300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/img_abc-9-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/s1200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/trest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/б.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/PlayWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/PlayWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SystemDialogue/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SystemDialogue/Button.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SystemDialogue/CustomFont.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SystemDialogue/CustomFont.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SystemDialogue/Dialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SystemDialogue/Dialogue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SystemDialogue/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SystemDialogue/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Sprites.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Sprites.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +80,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586020103519" />
-    <property name="last_opened_file_path" value="F:/SecondGames/SecondProject" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/comp-math-lab2-master/comp-math-lab2-master/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -123,6 +145,7 @@
       <workItem from="1587022965999" duration="13770000" />
       <workItem from="1587053339970" duration="30872000" />
       <workItem from="1587306896517" duration="3767000" />
+      <workItem from="1587325500866" duration="1596000" />
     </task>
     <servers />
   </component>
@@ -163,46 +186,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="119" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1586094881320" />
-    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1587307591781">
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1587327112254">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587307591781" />
-    <state width="1323" height="289" key="GridCell.Tab.0.bottom" timestamp="1587119549218">
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587327112254" />
+    <state width="1323" height="260" key="GridCell.Tab.0.bottom" timestamp="1587327113386">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="289" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587119549218" />
-    <state width="1323" height="289" key="GridCell.Tab.0.center" timestamp="1587119549218">
+    <state width="1323" height="260" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587327113386" />
+    <state width="1323" height="260" key="GridCell.Tab.0.center" timestamp="1587327113386">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="289" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587119549218" />
-    <state width="1323" height="289" key="GridCell.Tab.0.left" timestamp="1587119549217">
+    <state width="1323" height="260" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587327113386" />
+    <state width="1323" height="260" key="GridCell.Tab.0.left" timestamp="1587327113385">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="289" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587119549217" />
-    <state width="1323" height="289" key="GridCell.Tab.0.right" timestamp="1587119549218">
+    <state width="1323" height="260" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587327113385" />
+    <state width="1323" height="260" key="GridCell.Tab.0.right" timestamp="1587327113386">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="289" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587119549218" />
-    <state width="1323" height="260" key="GridCell.Tab.1.bottom" timestamp="1587118958869">
+    <state width="1323" height="260" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587327113386" />
+    <state width="1323" height="260" key="GridCell.Tab.1.bottom" timestamp="1587327113387">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587118958869" />
-    <state width="1323" height="260" key="GridCell.Tab.1.center" timestamp="1587118958869">
+    <state width="1323" height="260" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587327113387" />
+    <state width="1323" height="260" key="GridCell.Tab.1.center" timestamp="1587327113387">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587118958869" />
-    <state width="1323" height="260" key="GridCell.Tab.1.left" timestamp="1587118958869">
+    <state width="1323" height="260" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587327113387" />
+    <state width="1323" height="260" key="GridCell.Tab.1.left" timestamp="1587327113386">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587118958869" />
-    <state width="1323" height="260" key="GridCell.Tab.1.right" timestamp="1587118958869">
+    <state width="1323" height="260" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587327113386" />
+    <state width="1323" height="260" key="GridCell.Tab.1.right" timestamp="1587327113387">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="260" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587118958869" />
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1587307505655">
+    <state width="1323" height="260" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587327113387" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1587325500009">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587307505655" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587325500009" />
     <state x="680" y="166" key="run.anything.popup" timestamp="1586518601429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -219,6 +242,16 @@
           <url>jar://$PROJECT_DIR$/lib/slick.jar!/org/newdawn/slick/SpriteSheet.class</url>
           <line>105</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SystemDialogue/CustomFont.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SystemDialogue/CustomFont.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -6,6 +6,7 @@ import Utils.CheckInput;
 import Utils.ImageLoader;
 import Utils.Physics;
 import Utils.Sprites;
+import javafx.scene.layout.Background;
 import ocean.GameMap;
 import org.newdawn.slick.*;
 import org.newdawn.slick.Graphics;
@@ -21,7 +22,7 @@ import java.util.Iterator;
 public class PlayWindow extends BasicGameState {
 
     private final int SPEED_BLOCKS = 5;
-
+    private Image background;
     private int STATE;
     private final int PLACE_BLOCKS_Y = 200;
     private int screenHeight, screenWidth;
@@ -52,6 +53,8 @@ public class PlayWindow extends BasicGameState {
         TrueTypeFont FontText=new TrueTypeFont(new java.awt.Font("Text", java.awt.Font.LAYOUT_LEFT_TO_RIGHT,10),false);
         this.loader = new ImageLoader();
         this.loader.LoadImage(Sprites.FONT_0, "resources/images/font_2.jpg");
+        this.loader.LoadImage(Sprites.BACKGROUND_SPACE, "resources/images/Kosmos2.png");
+        background=loader.getImagesMap().get(Sprites.BACKGROUND_SPACE);
         CustomFont font=new CustomFont(loader.getImagesMap().get(Sprites.FONT_0),10,10) ;
         font.loadBasicFont();
         Page page1=new Page();
@@ -72,15 +75,15 @@ public class PlayWindow extends BasicGameState {
         dialogue.SetFontAllPage(font) ;
         dialogue.setDistancesFromTextToBorder(3);
         dialogue.addButton(new Button(ButtonName.NEXT,ConditionChoice.NEXT));
-        dialogue.getButtons().get("NEXT").setFontName(FontText);
-        dialogue.getButtons().get("NEXT").setVisible(true);
-        dialogue.getButtons().get("NEXT").getLocation().setHeight(FontText.getLineHeight());
+        dialogue.getButtons().get(ButtonName.NEXT).setFontName(FontText);
+        dialogue.getButtons().get(ButtonName.NEXT).setVisible(true);
+        dialogue.getButtons().get(ButtonName.NEXT).getLocation().setHeight(FontText.getLineHeight());
         dialogue.addButton(new Button(ButtonName.YES,ConditionChoice.YES));
-        dialogue.getButtons().get("YES").setFontName(FontText);
-        dialogue.getButtons().get("YES").getLocation().setHeight(FontText.getLineHeight());
+        dialogue.getButtons().get(ButtonName.YES).setFontName(FontText);
+        dialogue.getButtons().get(ButtonName.YES).getLocation().setHeight(FontText.getLineHeight());
         dialogue.addButton(new Button(ButtonName.NO,ConditionChoice.YES));
-         dialogue.getButtons().get("NO").setFontName(FontText);
-         dialogue.getButtons().get("NO").getLocation().setHeight(FontText.getLineHeight());
+         dialogue.getButtons().get(ButtonName.NO).setFontName(FontText);
+         dialogue.getButtons().get(ButtonName.NO).getLocation().setHeight(FontText.getLineHeight());
 
         this.loader = new ImageLoader();
         this.loader.LoadImage(Sprites.PLAYER_L, "resources/images/player.jpg");
@@ -155,6 +158,7 @@ public class PlayWindow extends BasicGameState {
 
     @Override
     public void render(GameContainer gameContainer, StateBasedGame stateBasedGame, Graphics g) throws SlickException {
+        background.draw(0,0,gameContainer.getWidth(),gameContainer.getHeight());
         map.draw(g);
         this.player.draw(g);
        //g.setBackground(Color.red);

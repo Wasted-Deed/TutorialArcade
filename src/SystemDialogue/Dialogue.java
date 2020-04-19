@@ -113,9 +113,9 @@ public class Dialogue
         //Åñëè êîíå÷íàÿ ñòðàíèöà - óñòàíîâèòü äðóãèå êíîïêè
         if ((NumberCurrentPage)>=(text.size()-1))
         {
-            Buttons.get("NO").setVisible(true);
-            Buttons.get("YES").setVisible(true);
-            Buttons.get("NEXT").setVisible(false);
+            Buttons.get(ButtonName.NO).setVisible(true);
+            Buttons.get(ButtonName.YES).setVisible(true);
+            Buttons.get(ButtonName.NEXT).setVisible(false);
         }
     }
     public int getMaxY() {
