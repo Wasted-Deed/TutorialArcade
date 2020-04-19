@@ -2,46 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11237784-26fc-40f8-b6f8-74e2cc2d1993" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SystemDialogue/Button.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SystemDialogue/ConditionChoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SystemDialogue/CustomFont.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SystemDialogue/Dialogue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SystemDialogue/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SystemDialogue/ButtonName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Main/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Main/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Main/MenuWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Main/MenuWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Main/PlayWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Main/PlayWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Ai.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Ai.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Behave.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Behave.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/BehaveAi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/BehaveAi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/ChechInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Collision.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Collision.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Drawable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/ImageLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Movable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Movable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Physics.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Sprites.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/TypeInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Unit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ocean/Behaviour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/Behaviour.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ocean/Building.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/Building.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ocean/Drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/Drawable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ocean/GameMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/GameMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ocean/TypeBuilding.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/TypeBuilding.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slick2d1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/slick2d1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/PlayWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/PlayWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/Ai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Ai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/ChechInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/CheckInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/ImageLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Physics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/Sprites.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Sprites.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/TypeInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/TypeInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SystemDialogue/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SystemDialogue/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SystemDialogue/CustomFont.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SystemDialogue/CustomFont.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SystemDialogue/Dialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SystemDialogue/Dialogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SystemDialogue/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SystemDialogue/Page.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -91,7 +58,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586020103519" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/SecondGames/SecondProject" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -155,6 +122,7 @@
       <workItem from="1586955115360" duration="2367000" />
       <workItem from="1587022965999" duration="13770000" />
       <workItem from="1587053339970" duration="30872000" />
+      <workItem from="1587306896517" duration="3767000" />
     </task>
     <servers />
   </component>
@@ -195,6 +163,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="119" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1586094881320" />
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1587307591781">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587307591781" />
     <state width="1323" height="289" key="GridCell.Tab.0.bottom" timestamp="1587119549218">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -227,10 +199,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="260" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587118958869" />
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1587053396718">
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1587307505655">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587053396718" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587307505655" />
     <state x="680" y="166" key="run.anything.popup" timestamp="1586518601429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -247,11 +219,6 @@
           <url>jar://$PROJECT_DIR$/lib/slick.jar!/org/newdawn/slick/SpriteSheet.class</url>
           <line>105</line>
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SystemDialogue/CustomFont.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

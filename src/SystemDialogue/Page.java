@@ -14,14 +14,11 @@ public class Page
     Font FontText;
     public void addLine(String newText)
     {
-        /*ArrayList<String> Line=new ArrayList<>();;
-        newText.replace("   "," ").replace("  "," ");
-        Collections.addAll(Line,newText.split(" "));*/
         text.add(newText);
     }
    public  int GetWidthline(int NumberLine)
    {
-        //System.out.println("Ширина строки="+FontText.getWidth(text.get(NumberLine)));
+
       return FontText.getWidth(text.get(NumberLine));
    }
    public  int GetHeightPage()

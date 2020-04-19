@@ -13,15 +13,16 @@ import java.util.Iterator;
 public class Dialogue
 {
     //:NOTE: UTF-8; Переменные на разных строках; По убыванию размеров классов-> затем по убыванию размеров типов.
-    ArrayList<Page> text;//Êîëëåêöèÿ ñòðàíèö
-    Rectangle PlaceOutputText;//Ïîçèöèÿ âûâîäà òåêñòà
-    Rectangle  Border;//Ïîçèöèÿ ðàìêè
-    Integer MaxY;//Îãðàíè÷åíèå.Çíà÷íåèå.ýíèæå êîòîðîãî äèàëîã íå äîëæåí íàõîäèòñÿ
-    int MaxCountPage,NumberCurrentPage;
-    boolean isVisible=false;
+    ArrayList<Page> text;
+    Rectangle PlaceOutputText;
+    Rectangle  Border;
     ConditionChoice condition;
-    HashMap<String,Button> Buttons;//Êîëëåêöèÿ êíîïîê
-    int DistancesFromTextToBorder=0;//Ðàññòîÿíèå ìåæäó ðàìêîé è òåêñòîì
+    HashMap<ButtonName,Button> Buttons;
+    Integer MaxY;
+    int MaxCountPage;
+    int NumberCurrentPage;
+    boolean isVisible;
+    int DistancesFromTextToBorder;
 
     public int getDistancesFromTextToBorder() {
         return this.DistancesFromTextToBorder;
@@ -57,7 +58,7 @@ public class Dialogue
 
         this.isVisible = visible;
     }
-//Çàäàòü åäèíûé øðèôò âñåì ñòðàíèöàì
+
     public void SetFontAllPage(Font FontPages)
     {
         Iterator<Page> Pages=text.iterator();
@@ -142,7 +143,7 @@ public  void CheckBellowMaxY()
         }
     }
 }
-//Èçìåíåíèå ïîëîæåíèÿ ïî Y â çàâèñèìîñòè îò äàííûõ( êîëè÷åññòâî ñòðîê)
+
 public void updateHeight()
 {
     Page CurrentPage=text.get(NumberCurrentPage);
@@ -161,7 +162,7 @@ public void updateHeight()
         Border.setY(Border.getY()+Math.abs(difference));
     }
 }
-//Èçìåíåíèå ïîëîæåíèÿ ïî Y â çàâèñèìîñòè îò äàííûõ( äëèíà ñòðîê)
+
 public void updateWidth()
 {
     Page CurrentPage=text.get(NumberCurrentPage);
@@ -171,8 +172,7 @@ public void updateWidth()
        if (CurrentPage.GetWidthline(i)>Maxlength)
            Maxlength=CurrentPage.GetWidthline(i);
     }
-    //Àäàïòàöèÿ  øèðèíû äèàëîãà
-    System.out.println("Øèðèíà ñòðîêè"+Maxlength+"Øèðèíà âûâîäà");
+
     int difference= (int) ((Maxlength-PlaceOutputText.getWidth())/2);
     if (difference>=0)
     {
@@ -188,45 +188,37 @@ public void updateWidth()
         Border.setWidth(Border.getWidth()-2*difference);
         Border.setX(Border.getX()+difference);
     }
-    System.out.println("Ðàçèöà ìåæäó áîðäþðîì è âûâîäîì:"+(Border.getMaxX()-PlaceOutputText.getMaxX()));
-    System.out.println("Áîðäþð:"+Border.getMaxX());
+
 }
-//Ôóíêöèÿ,êîòîðàÿ îáíîâëÿåò ïîëîæåíèå âñåõ ýëåìåíòîâ äèàëîãà ,èñïîëüçóÿ updateHeight() è updateWidth()
     public void UpdatePosition()
     {
         updateHeight();
         updateWidth();
-        //Îáíîâëåíèå ïîëîæåíèÿ êíîïîê
-        Iterator<Button> CurrentButton=Buttons.values().iterator();
+             Iterator<Button> CurrentButton=Buttons.values().iterator();
             while (CurrentButton.hasNext())
             {
                 Button button=CurrentButton.next();
-             //:NOTE: копипаста : лучше сделать Map, у button name - Enum - вместо String,
-                //в Map хранятся спецификации кнопки.
-                if(button.getName().equals("NEXT"))
+                switch (button.getName())
                 {
-                    button.getLocation().setLocation(Border.getX(),PlaceOutputText.getMaxY());
-                    button.getLocation().setWidth(Border.getWidth());
+                    case NEXT:
+                        button.getLocation().setLocation(Border.getX(),PlaceOutputText.getMaxY());
+                        button.getLocation().setWidth(Border.getWidth());
+                        break;
+                    case YES:
+                        button.getLocation().setLocation(Border.getX(),PlaceOutputText.getMaxY());
+                        button.getLocation().setWidth(Border.getWidth()/2);
+                        break;
+                    case NO:
+                        button.getLocation().setLocation(Border.getX()+Border.getWidth()/2,PlaceOutputText.getMaxY());
+                        button.getLocation().setWidth(Border.getWidth()/2);
+                        break;
                 }
-                if(button.getName().equals("YES"))
-                {
-                    button.getLocation().setLocation(Border.getX(),PlaceOutputText.getMaxY());
-                    button.getLocation().setWidth(Border.getWidth()/2);
-                }
-                if(button.getName().equals("NO"))
-                {
-                    button.getLocation().setLocation(Border.getX()+Border.getWidth()/2,PlaceOutputText.getMaxY());
-                    button.getLocation().setWidth(Border.getWidth()/2);
-                }
-
-
                 if (button.getLocation().getHeight()==0)
                 {
                     button.getLocation().setHeight(DistancesFromTextToBorder);
 
                 }else
                     {
-                        //Ïðîâåðêà íà òî,÷òî êíîïêà ëåæèò âíóòðè ðàìêè
                      int difference = (int) (button.getLocation().getMaxY()-Border.getMaxY());
                     if (difference>=0)
                     {
@@ -284,18 +276,16 @@ public void updateWidth()
         return this.text;
     }
 
-    public HashMap<String, Button> getButtons() {
+    public HashMap<ButtonName, Button> getButtons() {
         return this.Buttons;
     }
 
-    public void setButtons(final HashMap<String, Button> buttons) {
+    public void setButtons(final HashMap<ButtonName, Button> buttons) {
         this.Buttons = buttons;
     }
 
     public void draw(Graphics g)
     {
-      //  Page CurrentPage = text.get(NumberCurrentPage);
-       // CurrentPage.getFontText().drawString(100, 100,"2");
         if (isVisible)
         {
             Page CurrentPage = text.get(NumberCurrentPage);

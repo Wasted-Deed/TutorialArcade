@@ -10,14 +10,14 @@ public class Button
 {
     Rectangle Location;
     Font FontName;
-    String Name;
+    ButtonName Name;
     ConditionChoice NameAction;
      boolean isVisible=false;
     public Rectangle getLocation() {
         return this.Location;
     }
 
-    public Button( final String name, final ConditionChoice nameAction)
+    public Button( final ButtonName name, final ConditionChoice nameAction)
     {
         Location=new Rectangle(0,0,0,0);
         this.Name = name;
@@ -48,11 +48,11 @@ public class Button
         this.FontName = fontName;
     }
 
-    public String getName() {
+    public ButtonName getName() {
         return this.Name;
     }
 
-    public void setName(final String name)
+    public void setName(final ButtonName name)
     {
         this.Name = name;
     }
@@ -61,6 +61,6 @@ public class Button
 
         g.drawRect(Location.getX(),Location.getY(),Location.getWidth(),Location.getHeight());
         g.setFont(FontName);
-        g.drawString(Name,Location.getX(),Location.getY());
+        g.drawString(String.valueOf(Name),Location.getX(),Location.getY());
     }
 }

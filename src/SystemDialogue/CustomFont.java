@@ -4,59 +4,46 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.Font;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SpriteSheet;
-import org.newdawn.slick.geom.Rectangle;
-import org.newdawn.slick.opengl.ImageData;
 
-import java.awt.*;
 import java.util.HashMap;
 
 public class CustomFont implements Font
 {
-
+    SpriteSheet spriteSheet;
     private final  HashMap<String, Image> FONT_COLLECTION;
-    //:NOTE: UTF-8
     private final String[] ALPHABET_ARRAY =
             {" ","1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
             ".",",", "!", "?", "(", ")", "'", " \" ", "/", "|", "\\", ":",";",
-            "À", "Á", "Â", "Ã", "Ä", "Å", "¨", "Æ", "Ç", "È", "É", "Ê", "Ë",
-            "Ì", "Í", "Î", "Ï", "Ð", "Ñ", "Ò", "Ó", "Ô", "Õ", "Ö", "×", "Ø",
-            "Ù", "Ú", "Û", "Ü", "Ý", "Þ", "ß",
-            "à", "á", "â", "ã", "ä", "å", "¸", "æ", "ç", "è", "é", "ê", "ë",
-            "ì", "í", "î", "ï", "ð", "ñ", "ò", "ó", "ô", "õ", "ö", "÷", "ø",
-            "ù", "ú", "û", "ü", "ý", "þ", "ÿ"};
-    private final HashMap<String, Integer> ALPHABET;
-    SpriteSheet spriteSheet;
-    //:NOTE: Переменные должны быть на разных строках (codestyle) + переменные в Java - с маленькой буквы (camelCase)
-    int Heigth,Width;
+                    "А", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "Й", "К", "Л",
+                    "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш",
+                    "Щ", "Ъ", "Ы", "Ь", "Э", "Ю", "Я",
+                    "а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л",
+                    "м", "н", "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш",
+                    "щ", "ъ", "ы", "ь", "э", "ю", "я"};
+    int heigth, width;
+    final int  CountWordsInLine=13;
+    final int  CountWordsInHeight=8;
 
-    public CustomFont(Image font,int Wsize,int Hsize)
-    {
-        Heigth=Wsize;
-        this.Width=Wsize;
-        this.Heigth=Hsize;
+
+    public CustomFont(Image font,int Wsize,int Hsize) {
+        heigth =Wsize;
+        this.width =Wsize;
+        this.heigth =Hsize;
         this.FONT_COLLECTION = new HashMap<>();
-        ALPHABET = new HashMap<>();
-        //:NOTE: Лучше сделать константы для всех подгонов
-        spriteSheet=new SpriteSheet(font,font.getWidth()/13,font.getHeight()/8);
+        spriteSheet=new SpriteSheet(font,font.getWidth()/CountWordsInLine,font.getHeight()/CountWordsInHeight);
     }
-    public void loadBasicFont()
-    {
+    public void loadBasicFont() {
         int count=0;
-
-        System.out.println("ãîðèçîíòàë="+spriteSheet.getVerticalCount()+" âåðò="+spriteSheet.getHorizontalCount());
         //:NOTE: Не хватает пробелов + в Java скобки в основном ставят так: func() {
         //                                                                  }
-        for (int k=0;k<spriteSheet.getVerticalCount();k++)
-        {
+        for (int k=0;k<spriteSheet.getVerticalCount();k++) {
             if (count>=ALPHABET_ARRAY.length)
             {
                 break;
             }
             for (int i = 0; i < spriteSheet.getHorizontalCount(); i++)
             {
-
-
-                FONT_COLLECTION.put(ALPHABET_ARRAY[count], spriteSheet.getSprite(i, k).getScaledCopy((int)Width, (int) Math.ceil(Heigth)));
+                FONT_COLLECTION.put(ALPHABET_ARRAY[count], spriteSheet.getSprite(i, k).getScaledCopy((int) width, (int) Math.ceil(heigth)));
                 if (ALPHABET_ARRAY[count].equals("ß")||ALPHABET_ARRAY[count].equals("ÿ")||ALPHABET_ARRAY[count].equals("0"))
                 {
                     count++;
@@ -71,25 +58,24 @@ public class CustomFont implements Font
     @Override
     public int getWidth(String s)
     {
-        return (int) Math.ceil(s.length()*Width);
+        return (int) Math.ceil(s.length()* width);
     }
 
     @Override
     public int getHeight(String s)
     {
-        return (int) (Heigth);
+        return (int) (heigth);
     }
 
     @Override
     public int getLineHeight()
     {
-        return (int) (Heigth);
+        return (int) (heigth);
     }
 
     @Override
     public void drawString(float v, float v1, String s)
     {
-        float starts=v;
         for (int i = 0; i < s.length(); i++)
         {
         String unit = String.valueOf(s.charAt(i));

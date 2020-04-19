@@ -71,14 +71,14 @@ public class PlayWindow extends BasicGameState {
         dialogue.addPage(page3);
         dialogue.SetFontAllPage(font) ;
         dialogue.setDistancesFromTextToBorder(3);
-        dialogue.addButton(new Button("NEXT",ConditionChoice.NEXT));
+        dialogue.addButton(new Button(ButtonName.NEXT,ConditionChoice.NEXT));
         dialogue.getButtons().get("NEXT").setFontName(FontText);
         dialogue.getButtons().get("NEXT").setVisible(true);
         dialogue.getButtons().get("NEXT").getLocation().setHeight(FontText.getLineHeight());
-        dialogue.addButton(new Button("YES",ConditionChoice.YES));
+        dialogue.addButton(new Button(ButtonName.YES,ConditionChoice.YES));
         dialogue.getButtons().get("YES").setFontName(FontText);
         dialogue.getButtons().get("YES").getLocation().setHeight(FontText.getLineHeight());
-        dialogue.addButton(new Button("NO",ConditionChoice.YES));
+        dialogue.addButton(new Button(ButtonName.NO,ConditionChoice.YES));
          dialogue.getButtons().get("NO").setFontName(FontText);
          dialogue.getButtons().get("NO").getLocation().setHeight(FontText.getLineHeight());
 
