@@ -52,8 +52,11 @@ public class PlayWindow extends BasicGameState {
         screenHeight = gameContainer.getHeight();
         TrueTypeFont FontText=new TrueTypeFont(new java.awt.Font("Text", java.awt.Font.LAYOUT_LEFT_TO_RIGHT,10),false);
         this.loader = new ImageLoader();
-        this.loader.LoadImage(Sprites.FONT_0, "resources/images/font_2.jpg");
+        this.loader.LoadImage(Sprites.FONT_0, "resources/images/font_2.png");
         this.loader.LoadImage(Sprites.BACKGROUND_SPACE, "resources/images/Kosmos2.png");
+
+        this.loader.LoadImage(Sprites.PLAYER_L, "resources/images/player.png");
+        this.loader.LoadImage(Sprites.FISH_L, "resources/images/fish.png");
         background=loader.getImagesMap().get(Sprites.BACKGROUND_SPACE);
         CustomFont font=new CustomFont(loader.getImagesMap().get(Sprites.FONT_0),10,10) ;
         font.loadBasicFont();
@@ -85,9 +88,7 @@ public class PlayWindow extends BasicGameState {
          dialogue.getButtons().get(ButtonName.NO).setFontName(FontText);
          dialogue.getButtons().get(ButtonName.NO).getLocation().setHeight(FontText.getLineHeight());
 
-        this.loader = new ImageLoader();
-        this.loader.LoadImage(Sprites.PLAYER_L, "resources/images/player.jpg");
-        this.loader.LoadImage(Sprites.FISH_L, "resources/images/fish.jpg");
+
         Ai NewEnemy = new Ai(1, 0, new Rectangle(300, PLACE_BLOCKS_Y,
                 (float)((Image)this.loader.getImagesMap().get(Sprites.FISH_L)).getWidth(),
                 (float)((Image)this.loader.getImagesMap().get(Sprites.FISH_L)).getHeight()), 2);
