@@ -1,6 +1,10 @@
 package Unit;
 
+import Shell.Shell;
+import Utils.CheckInput;
 import Utils.TypeInput;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.geom.Point;
 import org.newdawn.slick.geom.Rectangle;
 
 public class Player extends Unit
@@ -8,20 +12,20 @@ public class Player extends Unit
     TypeInput input;
 
 
-    public void attack() {
-    }
 
     public Player(int health, float mWalkSpeed, Rectangle location, int damage)
     {
         super(health, mWalkSpeed/10.0F, location, damage);
-        this.input = TypeInput.None;
+
     }
 
     public TypeInput getInput() {
         return this.input;
     }
 
-    public void setInput(TypeInput input) {
+
+
+    public void setInput(final TypeInput input) {
         this.input = input;
     }
 
@@ -59,9 +63,13 @@ public class Player extends Unit
             case L:
 
                if (!isStopX())this.move(-this.getmWalkSpeed() , 0.0F);
+                RightOrLeftLook=false;
+
                 break;
             case R:
                 if (!isStopX())  this.move(this.getmWalkSpeed() , 0.0F);
+                RightOrLeftLook=true;
+                break;
         }
 
     }

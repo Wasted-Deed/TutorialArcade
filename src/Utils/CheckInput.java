@@ -14,13 +14,10 @@ public class CheckInput
         this.gc=gc;
         input = this.gc.getInput();
     }
-    public TypeInput CheckPlayer()
+    public TypeInput CheckButtonMove()
     {
-
-
         if (input.isKeyPressed( Input.KEY_UP))
         {
-
             if (input.isKeyDown( Input.KEY_RIGHT))
                 return TypeInput.R_UP;
             else if (input.isKeyDown( Input.KEY_LEFT))
@@ -34,7 +31,13 @@ public class CheckInput
                 return TypeInput.L;
             else return TypeInput.None;
         }
-
+    }
+    public  TypeInput CheckClickButtons()
+    {
+        if (input.isKeyPressed( Input.KEY_LCONTROL))
+        {
+            return  TypeInput.Control;
+        }else return TypeInput.None;
     }
     public Point CheckClickMouse()
     {

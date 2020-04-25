@@ -6,7 +6,8 @@ public enum TypeInput {
     R_UP,
     L_UP,
     Up,
-    None;
+    None,
+    Control;
 
     private TypeInput() {
     }

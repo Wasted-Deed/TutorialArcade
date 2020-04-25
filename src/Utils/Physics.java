@@ -1,10 +1,13 @@
 package Utils;
 
+import Shell.Shell;
 import Unit.Unit;
 import ocean.Building;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Physics {
@@ -20,6 +23,22 @@ public class Physics {
             } else {
                 unit.setJump(false);
             }
+    }
+    public static void   CollisionBulletWithUnit(Unit unit, ArrayList<Shell> ListShels)
+    {
+        Iterator var2 = ListShels.iterator();
+        while (var2.hasNext())
+        {
+            Shell currentShell=(Shell)var2.next();
+            if((currentShell.getLocation().intersects(unit.getLocation()))&&(currentShell.getNumberCommand()!=unit.getNumberCommand()))
+            {
+                ListShels.remove(currentShell);
+                System.out.println("Пуля уничтожена");
+                unit.setHealth(unit.getHealth()-currentShell.getDamage());
+                break;
+            }
+        }
+
     }
     public static void  CollisionWithBlocks(Unit unit, LinkedList<Building> buildings)
     {
