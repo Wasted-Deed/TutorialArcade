@@ -27,6 +27,7 @@ public class Game extends StateBasedGame {
         AppGameContainer game = new AppGameContainer(new Game("game"));
         game.setDisplayMode(SCREEN_WIDTH, SCREEN_HEIGHT, false);
         game.setAlwaysRender(true);
+        game.setTargetFrameRate(60);
         game.setMinimumLogicUpdateInterval(17);  // 60 ?????? ? ???????
         game.start();
     }

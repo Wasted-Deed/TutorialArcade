@@ -56,6 +56,7 @@ public class PlayWindow extends BasicGameState {
         this.loader.LoadImage(Sprites.PLAYER_L, "resources/images/player.png");
         this.loader.LoadImage(Sprites.FISH_L, "resources/images/fish.png");
         this.loader.LoadImage(Sprites.ENEMY_0, "resources/images/enemy_0.png");
+        this.loader.LoadImage(Sprites.HEART, "resources/images/heart.png");
         background=loader.getImagesMap().get(Sprites.BACKGROUND_SPACE);
         CustomFont font=new CustomFont(loader.getImagesMap().get(Sprites.FONT_0),10,10) ;
         font.loadBasicFont();
@@ -196,6 +197,7 @@ public class PlayWindow extends BasicGameState {
         background.draw(0,0,gameContainer.getWidth(),gameContainer.getHeight());
         map.draw(g);
         this.player.draw(g);
+
         Iterator var3 = this.enemy.iterator();
         while(var3.hasNext())
         {
@@ -209,5 +211,9 @@ public class PlayWindow extends BasicGameState {
             CurrentShells.draw(loader);
         }
         dialogue.draw(g);
+        for (int i=0;i<player.getHealth();i++)
+        {
+            loader.getImagesMap().get(Sprites.HEART).draw(25*i,0,25,25);
+        }
     }
 }

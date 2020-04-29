@@ -2,49 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11237784-26fc-40f8-b6f8-74e2cc2d1993" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Shell/ConditionShell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Shell/Shell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Shell/TypeShell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Main/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Main/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Main/PlayWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Main/PlayWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Ai.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Ai.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/ChechInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/ImageLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Physics.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Sprites.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/TypeInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Unit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Utils/CheckInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Utils/CheckInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Utils/Physics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Utils/Physics.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Utils/Sprites.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Utils/Sprites.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Utils/TypeInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Utils/TypeInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/fish.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/font_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/font_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/font_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/player.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/fish.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/font_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/font_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/font_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/player.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/PlayWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/PlayWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/Ai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Ai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/ChechInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/ImageLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/Physics.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/Sprites.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/TypeInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Unit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/CheckInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/CheckInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Physics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/Sprites.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Sprites.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/TypeInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/TypeInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +129,8 @@
       <workItem from="1587654170086" duration="21130000" />
       <workItem from="1587732238994" duration="5778000" />
       <workItem from="1587757379907" duration="25506000" />
+      <workItem from="1588011955423" duration="676000" />
+      <workItem from="1588184990967" duration="2874000" />
     </task>
     <servers />
   </component>
@@ -185,18 +151,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579451586219">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1579451586219" />
     <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser" timestamp="1587827056951">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1587827056951" />
-    <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579451584831">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1579451584831" />
     <state x="534" y="257" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586081065014">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -213,26 +171,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="406" y="91" key="#xdebugger.XInspectDialog/0.0.1366.728@0.0.1366.728" timestamp="1587825037962" />
-    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1587715665589">
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1588017026084">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587715665589" />
-    <state width="1323" height="47" key="GridCell.Tab.0.bottom" timestamp="1587828075090">
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588017026084" />
+    <state width="1323" height="2" key="GridCell.Tab.0.bottom" timestamp="1588187832673">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="47" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587828075090" />
-    <state width="1323" height="47" key="GridCell.Tab.0.center" timestamp="1587828075090">
+    <state width="1323" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588187832673" />
+    <state width="1323" height="2" key="GridCell.Tab.0.center" timestamp="1588187832673">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="47" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587828075090" />
-    <state width="1323" height="47" key="GridCell.Tab.0.left" timestamp="1587828075090">
+    <state width="1323" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588187832673" />
+    <state width="1323" height="2" key="GridCell.Tab.0.left" timestamp="1588187832672">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="47" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587828075090" />
-    <state width="1323" height="47" key="GridCell.Tab.0.right" timestamp="1587828075090">
+    <state width="1323" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588187832672" />
+    <state width="1323" height="2" key="GridCell.Tab.0.right" timestamp="1588187832673">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="47" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587828075090" />
+    <state width="1323" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588187832673" />
     <state width="1323" height="47" key="GridCell.Tab.1.bottom" timestamp="1587828075091">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -249,10 +207,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="47" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587828075091" />
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1587757501256">
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1588185264982">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587757501256" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588185264982" />
     <state x="680" y="166" key="run.anything.popup" timestamp="1586518601429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

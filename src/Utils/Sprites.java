@@ -10,7 +10,8 @@ public enum Sprites {
     BACKGROUND_SPACE,
     ShellR,
     ShellL,
-    ENEMY_0;
+    ENEMY_0,
+    HEART;
     private Sprites() {
     }
 }
