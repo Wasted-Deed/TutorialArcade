@@ -2,6 +2,8 @@ package Unit;
 
 
 import Shell.Shell;
+import Utils.ImageLoader;
+import Utils.Sprites;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Point;
@@ -13,8 +15,8 @@ import java.util.HashMap;
 import java.util.Map;
 import  Shell.TypeShell;
 public abstract class Unit implements Drawable, Movable, Behave ,Collision{
-    private Image ImageR;
-    private Image ImageL;
+    ConditionUnit condition;
+    HashMap<ConditionUnit, Sprites>  IDimage=new HashMap<>();
     private Vector2f Speed = new Vector2f();
     private float mJumpSpeed;
     private TypeShell TypeBullet;
@@ -28,6 +30,7 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
     private Rectangle Location;
     private int damage;
     private boolean StopX=false;
+
     public void setTypeBullet(final TypeShell typeBullet)
     {
         this.TypeBullet = typeBullet;
@@ -46,13 +49,28 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
     public TypeShell getTypeBullet() {
         return this.TypeBullet;
     }
-
-
-
-    public Image getImageL() {
-        return this.ImageL;
-
+    public ConditionUnit getCondition() {
+        return this.condition;
     }
+
+    public void setCondition(final ConditionUnit condition) {
+        this.condition = condition;
+    }
+
+    public HashMap<ConditionUnit, Sprites> getIDimage() {
+        return this.IDimage;
+    }
+
+    public void setIDimage(final HashMap<ConditionUnit, Sprites> IDimage) {
+        this.IDimage = IDimage;
+    }
+    public Unit()
+    {
+        IDimage.put(ConditionUnit.MOVE_LEFT,Sprites.PLAYER_L);
+        IDimage.put(ConditionUnit.MOVE_RIGHT,Sprites.PLAYER_R);
+    }
+
+
  public boolean checkCollision(Shape shape)
  {
      return Location.intersects(shape);
@@ -65,20 +83,12 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
     }
     public void behave() {
     }
-    public void setImageL(Image imageL) {
-        this.ImageL = imageL;
-    }
+
     public boolean isOnEarth() {
         return this.OnEarth;
     }
     public void setOnEarth(boolean onEarth) {
         this.OnEarth = onEarth;
-    }
-    public Image getImageR() {
-        return this.ImageR;
-    }
-    public void setImageR(Image imageR) {
-        this.ImageR = imageR;
     }
     public void move() {
         this.Location.setLocation(this.Location.getX() + this.Speed.getX(), this.Location.getY() + this.Speed.getY());
@@ -112,7 +122,9 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
 
     }
 
-    public Unit(int health, float mWalkSpeed, Rectangle location, int damage) {
+    public Unit(int health, float mWalkSpeed, Rectangle location, int damage)
+    {
+        this();
         this.health = health;
         this.mWalkSpeed = mWalkSpeed;
         this.Location = location;
@@ -121,13 +133,11 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
     public void setSpeed(Vector2f speed) {
         this.Speed = speed;
     }
-    public void draw(Graphics g) {
-        if (this.getImageR() == null) {
-            g.drawRect(this.getLocation().getX(), this.getLocation().getY(), this.getLocation().getWidth(), this.getLocation().getHeight());
-        } else {
-            //this.getImageR().drawCentered(this.getLocation().getCenterX(), this.getLocation().getCenterY());
-            this.getImageR().draw(getLocation().getX(),getLocation().getY(),getLocation().getWidth(),getLocation().getHeight());
-        }
+    public void draw(ImageLoader loader)
+    {
+
+        loader.getImagesMap().get(IDimage.get(condition)).draw(this.getLocation().getX(), this.getLocation().getY(), this.getLocation().getWidth(), this.getLocation().getHeight());
+
 
     }
     public int getHealth() {

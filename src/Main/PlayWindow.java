@@ -53,9 +53,12 @@ public class PlayWindow extends BasicGameState {
         this.loader.LoadImage(Sprites.ShellR, "resources/images/bulletR.png");
         this.loader.LoadImage(Sprites.ShellL, "resources/images/bulletL.png");
         this.loader.LoadImage(Sprites.BACKGROUND_SPACE, "resources/images/Kosmos2.png");
-        this.loader.LoadImage(Sprites.PLAYER_L, "resources/images/player.png");
-        this.loader.LoadImage(Sprites.FISH_L, "resources/images/fish.png");
-        this.loader.LoadImage(Sprites.ENEMY_0, "resources/images/enemy_0.png");
+        this.loader.LoadImage(Sprites.PLAYER_L, "resources/images/playerL.png");
+        this.loader.LoadImage(Sprites.PLAYER_R, "resources/images/playerR.png");
+        this.loader.LoadImage(Sprites.FISH_L, "resources/images/fishL.png");
+        this.loader.LoadImage(Sprites.FISH_R, "resources/images/fishR.png");
+        this.loader.LoadImage(Sprites.ENEMY_0L, "resources/images/enemy_0L.png");
+        this.loader.LoadImage(Sprites.ENEMY_0R, "resources/images/enemy_0R.png");
         this.loader.LoadImage(Sprites.HEART, "resources/images/heart.png");
         background=loader.getImagesMap().get(Sprites.BACKGROUND_SPACE);
         CustomFont font=new CustomFont(loader.getImagesMap().get(Sprites.FONT_0),10,10) ;
@@ -92,18 +95,21 @@ public class PlayWindow extends BasicGameState {
         Ai NewEnemy = new Ai(1, 0, new Rectangle(300, PLACE_BLOCKS_Y,
                 (float)((Image)this.loader.getImagesMap().get(Sprites.FISH_L)).getWidth(),
                 (float)((Image)this.loader.getImagesMap().get(Sprites.FISH_L)).getHeight()), 2);
-        NewEnemy.setImageR((Image)this.loader.getImagesMap().get(Sprites.FISH_L));
-        NewEnemy.getImageR().setRotation(180.0F);
         NewEnemy.setNumberCommand(1);
+        NewEnemy.getIDimage().put(ConditionUnit.MOVE_LEFT, Sprites.FISH_L);
+        NewEnemy.getIDimage().put(ConditionUnit.MOVE_RIGHT,Sprites.FISH_R);
+        NewEnemy.setDelayShooting(100000);
+        NewEnemy.setRadiusVisibility(-5);
         this.enemy.add(NewEnemy);
         Ai NewEnemy2 = new Ai(1, 0, new Rectangle(290, PLACE_BLOCKS_Y-180,
                 (float)((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L)).getWidth(),
                 (float)((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L)).getHeight()), 2);
         NewEnemy2.getListForce().put("Gravity", new Vector2f(0.0F, 10.0F));
-        NewEnemy2.setImageR((Image)this.loader.getImagesMap().get(Sprites.ENEMY_0));
         NewEnemy2.setNumberCommand(1);
         NewEnemy2.setRadiusVisibility(200);
         NewEnemy2.setDelayShooting(2000);
+        NewEnemy2.getIDimage().put(ConditionUnit.MOVE_LEFT, Sprites.ENEMY_0L);
+        NewEnemy2.getIDimage().put(ConditionUnit.MOVE_RIGHT,Sprites.ENEMY_0R);
         this.enemy.add(NewEnemy2);
         this.player = new Player(3, 5.0F, new Rectangle(170.0F, PLACE_BLOCKS_Y-180,
                 (float)((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L)).getWidth(),
@@ -111,7 +117,6 @@ public class PlayWindow extends BasicGameState {
         this.player.setmJumpSpeed(3.0F);
         this.player.setJump(false);
         this.player.getListForce().put("Gravity", new Vector2f(0.0F, 10.0F));
-        this.player.setImageR((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L));
         this.player.setTypeBullet(TypeShell.NORMAL);
 
         player.setNumberCommand(0);
@@ -196,13 +201,13 @@ public class PlayWindow extends BasicGameState {
     public void render(GameContainer gameContainer, StateBasedGame stateBasedGame, Graphics g) throws SlickException {
         background.draw(0,0,gameContainer.getWidth(),gameContainer.getHeight());
         map.draw(g);
-        this.player.draw(g);
+        this.player.draw(loader);
 
         Iterator var3 = this.enemy.iterator();
         while(var3.hasNext())
         {
             Ai CurrentEnemy = (Ai)var3.next();
-            CurrentEnemy.draw(g);
+            CurrentEnemy.draw(loader);
         }
         Iterator var4 = this.shells.iterator();
         while(var4.hasNext())

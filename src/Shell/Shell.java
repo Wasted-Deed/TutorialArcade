@@ -9,10 +9,15 @@ import java.util.HashMap;
 
 public class Shell
 {
-    Rectangle Location;
-    TypeShell type;
-    Point speed;
 
+    Rectangle Location;
+
+    Point speed;
+    ConditionShell condition;
+    HashMap<ConditionShell, Sprites>  IDimage=new HashMap<>();
+    TypeShell type;
+    int damage;
+    int NumberCommand;
     public int getNumberCommand() {
         return this.NumberCommand;
     }
@@ -21,10 +26,7 @@ public class Shell
         this.NumberCommand = numberCommand;
     }
 
-    int damage;
-    int NumberCommand;
-    ConditionShell condition;
-    HashMap<ConditionShell, Sprites>  IDimage=new HashMap<>();
+
     public Shell()
     {
         IDimage.put(ConditionShell.MOVE_LEFT,Sprites.ShellL);

@@ -67,16 +67,18 @@ public class Ai extends Unit implements BehaveAi {
                  break;
             }
         }
-        if (this.getLocation().getMinX() <= 0.0F) {
-            this.getImageR().setRotation(180.0F);
+        if (this.getLocation().getMinX() <= 0.0F)
+        {
+
             this.SetSpeed(-this.getSpeed().getX(), 0.0F);
         }
 
-        if (this.getLocation().getMaxX() >= 700.0F) {
-            this.getImageR().setRotation(0.0F);
+        if (this.getLocation().getMaxX() >= 700.0F)
+        {
             this.SetSpeed(-this.getSpeed().getX(), 0.0F);
         }
-
+        if (getSpeed().getX()>0) setCondition(ConditionUnit.MOVE_RIGHT);
+        else setCondition(ConditionUnit.MOVE_LEFT);
         this.move();
     }
 
@@ -85,6 +87,7 @@ public class Ai extends Unit implements BehaveAi {
     {
         super(health, mWalkSpeed, location, damage);
         RightOrLeftLook=false;
+        setCondition(ConditionUnit.MOVE_LEFT);
         this.SetSpeed(-this.getmWalkSpeed() / 10.0F, 0.0F);
     }
 

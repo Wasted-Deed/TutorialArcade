@@ -2,7 +2,9 @@ package Unit;
 
 import Shell.Shell;
 import Utils.CheckInput;
+import Utils.Sprites;
 import Utils.TypeInput;
+import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Point;
 import org.newdawn.slick.geom.Rectangle;
@@ -16,7 +18,9 @@ public class Player extends Unit
     public Player(int health, float mWalkSpeed, Rectangle location, int damage)
     {
         super(health, mWalkSpeed/10.0F, location, damage);
-
+        IDimage.put(ConditionUnit.MOVE_LEFT, Sprites.PLAYER_L);
+        IDimage.put(ConditionUnit.MOVE_RIGHT,Sprites.PLAYER_R);
+        setCondition(ConditionUnit.MOVE_RIGHT);
     }
 
     public TypeInput getInput() {
@@ -45,11 +49,13 @@ public class Player extends Unit
                         this.setJump(true);
                     }
                 }
+                setCondition(ConditionUnit.MOVE_RIGHT);
                 break;
             case L_UP:
                 if (!isJump()) {
                     if (!isStopX()) this.move(-this.getmWalkSpeed() , 0.0F);
                 }
+                setCondition(ConditionUnit.MOVE_LEFT);
             case Up:
 
                     if (!this.isJump())
@@ -64,18 +70,22 @@ public class Player extends Unit
 
                if (!isStopX())this.move(-this.getmWalkSpeed() , 0.0F);
                 RightOrLeftLook=false;
-
+                setCondition(ConditionUnit.MOVE_LEFT);
                 break;
             case R:
                 if (!isStopX())  this.move(this.getmWalkSpeed() , 0.0F);
                 RightOrLeftLook=true;
+                setCondition(ConditionUnit.MOVE_RIGHT);
                 break;
         }
 
     }
 
-    public void behave() {
+    public void behave()
+    {
         this.Control();
         this.move();
     }
+
+
 }
