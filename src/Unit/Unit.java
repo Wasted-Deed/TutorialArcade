@@ -1,7 +1,7 @@
 package Unit;
 
 
-import Shell.Shell;
+import Shell.*;
 import Utils.ImageLoader;
 import Utils.Sprites;
 import org.newdawn.slick.Graphics;
@@ -19,7 +19,7 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
     HashMap<ConditionUnit, Sprites>  IDimage=new HashMap<>();
     private Vector2f Speed = new Vector2f();
     private float mJumpSpeed;
-    private TypeShell TypeBullet;
+    private BuilderShell builder;
     private int NumberCommand;
     boolean RightOrLeftLook=false;
     private int health;
@@ -29,34 +29,31 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
     private boolean OnEarth = false;
     private Rectangle Location;
     private int damage;
-    private boolean StopX=false;
 
-    public void setTypeBullet(final TypeShell typeBullet)
-    {
-        this.TypeBullet = typeBullet;
+    public boolean isCollision() {
+        return this.Collision;
     }
+
+    public void setCollision(final boolean collision) {
+        this.Collision = collision;
+    }
+
+    private  boolean Collision;
     public boolean isRightOrLeftLook() {
         return this.RightOrLeftLook;
     }
     public int getNumberCommand() {
         return this.NumberCommand;
     }
-
     public void setNumberCommand(final int numberCommand) {
         this.NumberCommand = numberCommand;
-    }
-
-    public TypeShell getTypeBullet() {
-        return this.TypeBullet;
     }
     public ConditionUnit getCondition() {
         return this.condition;
     }
-
     public void setCondition(final ConditionUnit condition) {
         this.condition = condition;
     }
-
     public HashMap<ConditionUnit, Sprites> getIDimage() {
         return this.IDimage;
     }
@@ -75,12 +72,7 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
  {
      return Location.intersects(shape);
  }
-    public boolean isStopX() {
-        return StopX;
-    }
-    public void setStopX(boolean stopX) {
-        StopX = stopX;
-    }
+
     public void behave() {
     }
 
@@ -96,30 +88,42 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
     public void move(float x, float y) {
         this.Location.setLocation(this.Location.getX() + x, this.Location.getY() + y);
     }
+
+    public BuilderShell getBuilder() {
+        return this.builder;
+    }
+
+    public void setBuilder(final BuilderShell builder) {
+        this.builder = builder;
+    }
+
     public Map<String, Vector2f> getListForce() {
         return this.ListForce;
     }
     public void setListForce(Map<String, Vector2f> listForce) {
         this.ListForce = listForce;
     }
-    public Shell attack(Point StartSpeed)
+    public Shell attack()
     {
 
-        Shell newshell = new Shell();
-        newshell.setSpeed(new Point(StartSpeed.getX(),StartSpeed.getY()));
+
+
         if (RightOrLeftLook == true)
         {
-            newshell.setLocation(new Rectangle(this.getLocation().getMaxX(), this.getLocation().getY() + getLocation().getHeight() / 2, 10, 10));
-            newshell.setCondition(ConditionShell.MOVE_RIGHT);
+            builder.setPosition(new Point(this.getLocation().getMaxX(), this.getLocation().getY() + getLocation().getHeight() / 4));
+            builder.setCondition(ConditionShell.MOVE_RIGHT);
         } else
         {
-            newshell.setLocation(new Rectangle(this.getLocation().getX(), this.getLocation().getY() + getLocation().getHeight() / 2, 10, 10));
-            newshell.setCondition(ConditionShell.MOVE_LEFT);
+            builder.setPosition(new Point(this.getLocation().getX(), this.getLocation().getY() + getLocation().getHeight() / 4));
+            builder.setCondition(ConditionShell.MOVE_LEFT);
         }
-        newshell.setDamage(1);
-        newshell.setNumberCommand(getNumberCommand());
-        return newshell;
+        builder.setNumberCommand(getNumberCommand());
+        return builder.build();
 
+    }
+
+    public void setRightOrLeftLook(final boolean rightOrLeftLook) {
+        this.RightOrLeftLook = rightOrLeftLook;
     }
 
     public Unit(int health, float mWalkSpeed, Rectangle location, int damage)

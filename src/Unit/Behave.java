@@ -1,5 +1,6 @@
 package Unit;
 
-public interface Behave {
+public interface Behave
+{
     void behave();
 }

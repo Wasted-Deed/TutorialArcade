@@ -7,17 +7,43 @@ import org.newdawn.slick.geom.Rectangle;
 
 import java.util.HashMap;
 
-public class Shell
+public class Shell implements Cloneable
 {
 
-    Rectangle Location;
+    Rectangle Location=new Rectangle(0,0,0,0);
 
     Point speed;
     ConditionShell condition;
     HashMap<ConditionShell, Sprites>  IDimage=new HashMap<>();
     TypeShell type;
     int damage;
+
+
+
+
+    public HashMap<ConditionShell, Sprites> getIDimage() {
+        return this.IDimage;
+    }
+
+    public void setIDimage(final HashMap<ConditionShell, Sprites> IDimage) {
+        this.IDimage = IDimage;
+    }
+
+
     int NumberCommand;
+
+    public Shell(Shell newShell)
+    {
+        this.Location.setLocation(newShell.getLocation().getX(),newShell.getLocation().getY());
+        Location.setSize(newShell.getLocation().getWidth(),newShell.getLocation().getHeight());
+        this.speed = newShell.getSpeed();
+        this.condition = newShell.getCondition();
+        this.IDimage = newShell.getIDimage();
+        this.type = newShell.getType();
+        this.damage = newShell.getDamage() ;
+        this.NumberCommand = newShell.getNumberCommand();
+    }
+
     public int getNumberCommand() {
         return this.NumberCommand;
     }
@@ -26,6 +52,15 @@ public class Shell
         this.NumberCommand = numberCommand;
     }
 
+    public Shell(final Rectangle location, final Point speed, final ConditionShell condition, final HashMap<ConditionShell, Sprites> IDimage, final TypeShell type, final int damage, final int numberCommand) {
+        this.Location = location;
+        this.speed = speed;
+        this.condition = condition;
+        this.IDimage = IDimage;
+        this.type = type;
+        this.damage = damage;
+        this.NumberCommand = numberCommand;
+    }
 
     public Shell()
     {
@@ -61,7 +96,9 @@ public class Shell
     }
     public void move()
     {
-        Location.setLocation(getLocation().getX()+speed.getX(),getLocation().getY()+speed.getY());
+
+        if (condition==ConditionShell.MOVE_LEFT)Location.setLocation(getLocation().getX()-speed.getX(),getLocation().getY()+speed.getY());
+   else if (condition==ConditionShell.MOVE_RIGHT) Location.setLocation(getLocation().getX()+speed.getX(),getLocation().getY()+speed.getY());
     }
     public Rectangle getLocation() {
         return this.Location;

@@ -31,13 +31,13 @@ public class GameMap implements Drawable, Behaviour {
 	}
 
 	public void addAlltypes() {
-		allTypes.add(new Building(spriteSheet.getSprite(0,0), TypeBuilding.SPACE));
-		allTypes.add(new Building(spriteSheet.getSprite(3,1), TypeBuilding.SQUARE_BLOCK));
+		allTypes.add(new Building(spriteSheet.getSprite(0,0), TypeBuilding.WALL));
+		allTypes.add(new Building(spriteSheet.getSprite(3,1),  TypeBuilding.WALL));
 		for (int i = 0; i < 4; ++i)
-			allTypes.add(new Building(spriteSheet.getSprite(i,2), TypeBuilding.SQUARE_BLOCK));
-		allTypes.add(new Building(spriteSheet.getSprite(0,3), TypeBuilding.SQUARE_BLOCK));
-		allTypes.add(new Building(spriteSheet.getSprite(1,3), TypeBuilding.SQUARE_BLOCK));
-		allTypes.add(new Building(spriteSheet.getSprite(7,3), TypeBuilding.SQUARE_BLOCK));
+			allTypes.add(new Building(spriteSheet.getSprite(i,2),  TypeBuilding.WALL));
+		allTypes.add(new Building(spriteSheet.getSprite(0,3),  TypeBuilding.WALL));
+		allTypes.add(new Building(spriteSheet.getSprite(1,3),  TypeBuilding.WALL));
+		allTypes.add(new Building(spriteSheet.getSprite(7,3),  TypeBuilding.WALL));
 		// добавлены не все!
 	}
 

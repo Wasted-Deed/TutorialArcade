@@ -1,7 +1,6 @@
 package ocean;
 
-public enum TypeBuilding {
-	SQUARE_BLOCK,
-	SPACE,
-	GROUND;
+public enum TypeBuilding
+{
+    WALL,MOVING_PLATFORM;
 }

@@ -42,7 +42,7 @@ public class Player extends Unit
             case R_UP:
                 if (!isJump())
                 {
-                    if (!isStopX()) this.move(this.getmWalkSpeed() , 0.0F);
+                    this.move(this.getmWalkSpeed() , 0.0F);
                     if (!this.isJump()) {
                         j = -this.getmJumpSpeed();
                         this.addSpeed(0.0F, j);
@@ -53,7 +53,7 @@ public class Player extends Unit
                 break;
             case L_UP:
                 if (!isJump()) {
-                    if (!isStopX()) this.move(-this.getmWalkSpeed() , 0.0F);
+                     this.move(-this.getmWalkSpeed() , 0.0F);
                 }
                 setCondition(ConditionUnit.MOVE_LEFT);
             case Up:
@@ -68,12 +68,12 @@ public class Player extends Unit
                 break;
             case L:
 
-               if (!isStopX())this.move(-this.getmWalkSpeed() , 0.0F);
+               this.move(-this.getmWalkSpeed() , 0.0F);
                 RightOrLeftLook=false;
                 setCondition(ConditionUnit.MOVE_LEFT);
                 break;
             case R:
-                if (!isStopX())  this.move(this.getmWalkSpeed() , 0.0F);
+                this.move(this.getmWalkSpeed() , 0.0F);
                 RightOrLeftLook=true;
                 setCondition(ConditionUnit.MOVE_RIGHT);
                 break;

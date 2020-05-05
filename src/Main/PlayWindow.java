@@ -1,6 +1,7 @@
 package Main;
 
 import Shell.Shell;
+import Shell.BuilderShell;
 import SystemDialogue.*;
 import Unit.*;
 import Utils.*;
@@ -26,7 +27,7 @@ public class PlayWindow extends BasicGameState {
     private GameMap map;
     private CheckInput Input;
 
-    private ArrayList<Ai> enemy = new ArrayList();
+    private ArrayList<Bot> enemy = new ArrayList();
     private ArrayList<Shell> shells=new ArrayList<>();
     private Dialogue dialogue=new Dialogue();
     private Player player;
@@ -45,8 +46,11 @@ public class PlayWindow extends BasicGameState {
 
     @Override
     public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException {
+        BuilderShell BuilderBulletNormal=new BuilderShell().setDamage(3).setType(TypeShell.NORMAL).setSpeed(new Point(1,0 )).setSize(new Point(20,20));
+        BuilderShell BuilderBulletFast=new BuilderShell().setDamage(1).setType(TypeShell.NORMAL).setSpeed(new Point(6,0 )).setSize(new Point(10,10));
         map = new GameMap(gameContainer.getWidth());
         Input= new CheckInput(gameContainer);
+
         TrueTypeFont FontText=new TrueTypeFont(new java.awt.Font("Text", java.awt.Font.LAYOUT_LEFT_TO_RIGHT,10),false);
         this.loader = new ImageLoader();
         this.loader.LoadImage(Sprites.FONT_0, "resources/images/font_2.png");
@@ -64,7 +68,7 @@ public class PlayWindow extends BasicGameState {
         CustomFont font=new CustomFont(loader.getImagesMap().get(Sprites.FONT_0),10,10) ;
         font.loadBasicFont();
         Page page1=new Page();
-        //page1.addLine("1");
+        page1.addLine("1");
         page1.addLine("1234567890");
         page1.addLine(".,!?()'\"/|\\:;");
         page1.addLine("¿¡¬√ƒ≈®∆«»… À");
@@ -92,43 +96,51 @@ public class PlayWindow extends BasicGameState {
         dialogue.getButtons().get(ButtonName.NO).getLocation().setHeight(FontText.getLineHeight());
 
 
-        Ai NewEnemy = new Ai(1, 0, new Rectangle(300, PLACE_BLOCKS_Y,
-                (float)((Image)this.loader.getImagesMap().get(Sprites.FISH_L)).getWidth(),
-                (float)((Image)this.loader.getImagesMap().get(Sprites.FISH_L)).getHeight()), 2);
+        Bot NewEnemy = new Bot(1, 1, new Rectangle(480, PLACE_BLOCKS_Y-180,
+                (float)((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L)).getWidth(),
+                (float)((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L)).getHeight()), 2);
+        NewEnemy.setmJumpSpeed(1.0F);
         NewEnemy.setNumberCommand(1);
-        NewEnemy.getIDimage().put(ConditionUnit.MOVE_LEFT, Sprites.FISH_L);
-        NewEnemy.getIDimage().put(ConditionUnit.MOVE_RIGHT,Sprites.FISH_R);
-        NewEnemy.setDelayShooting(100000);
-        NewEnemy.setRadiusVisibility(-5);
-        this.enemy.add(NewEnemy);
-        Ai NewEnemy2 = new Ai(1, 0, new Rectangle(290, PLACE_BLOCKS_Y-180,
+        NewEnemy.getIDimage().put(ConditionUnit.MOVE_LEFT, Sprites.ENEMY_0L);
+        NewEnemy.getIDimage().put(ConditionUnit.MOVE_RIGHT,Sprites.ENEMY_0R);
+        NewEnemy.setCanAttack(true);
+        NewEnemy.getListForce().put("Gravity", new Vector2f(0.0F, 5.0F));
+        NewEnemy.setAi(new AiPatrol(NewEnemy,3000,500,300,1500,100));
+        NewEnemy.setBuilder(BuilderBulletNormal);
+        NewEnemy.setRightOrLeftLook(false);
+      this.enemy.add(NewEnemy);
+        Bot NewEnemy2 = new Bot(1, 0.3F, new Rectangle(290, 0,
                 (float)((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L)).getWidth(),
                 (float)((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L)).getHeight()), 2);
         NewEnemy2.getListForce().put("Gravity", new Vector2f(0.0F, 10.0F));
         NewEnemy2.setNumberCommand(1);
-        NewEnemy2.setRadiusVisibility(200);
-        NewEnemy2.setDelayShooting(2000);
         NewEnemy2.getIDimage().put(ConditionUnit.MOVE_LEFT, Sprites.ENEMY_0L);
         NewEnemy2.getIDimage().put(ConditionUnit.MOVE_RIGHT,Sprites.ENEMY_0R);
+        NewEnemy2.setCanAttack(true);
+        NewEnemy2.setRightOrLeftLook(false);
+        NewEnemy2.setAi(new AiPatrol(NewEnemy2,3000,500,200,2000,100));
+         NewEnemy2.setBuilder(BuilderBulletNormal);
         this.enemy.add(NewEnemy2);
-        this.player = new Player(3, 5.0F, new Rectangle(170.0F, PLACE_BLOCKS_Y-180,
+        this.player = new Player(300, 5.0F, new Rectangle(170.0F, 0,
                 (float)((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L)).getWidth(),
                 (float)((Image)this.loader.getImagesMap().get(Sprites.PLAYER_L)).getHeight()), 2);
         this.player.setmJumpSpeed(3.0F);
         this.player.setJump(false);
+        player.setRightOrLeftLook(true);
         this.player.getListForce().put("Gravity", new Vector2f(0.0F, 10.0F));
-        this.player.setTypeBullet(TypeShell.NORMAL);
+        this.player.setBuilder(BuilderBulletFast);
 
         player.setNumberCommand(0);
-        map.addBuilding(80, (float) 125.6);
-        map.addBuilding(80, (float)PLACE_BLOCKS_Y+16);
-        map.addBuilding(200, (float)PLACE_BLOCKS_Y-50);
-        map.addBuilding(233, (float)PLACE_BLOCKS_Y-50);
-        map.addBuilding(265, (float)PLACE_BLOCKS_Y-50);
-        map.addBuilding(297, (float)PLACE_BLOCKS_Y-50);
-        map.addBuilding(329, (float)PLACE_BLOCKS_Y-50);
-        map.addBuilding(170, (float)PLACE_BLOCKS_Y-50);
-        map.addBuilding(-20, (float)PLACE_BLOCKS_Y+17);
+        map.addBuilding(100, (float) 125.6);
+        map.addBuilding(200, (float)232);
+        map.addBuilding(220, (float)PLACE_BLOCKS_Y-70);
+        map.addBuilding(253, (float)PLACE_BLOCKS_Y-70);
+        map.addBuilding(285, (float)PLACE_BLOCKS_Y-70);
+        map.addBuilding(317, (float)PLACE_BLOCKS_Y-70);
+        map.addBuilding(349, (float)PLACE_BLOCKS_Y-70);
+        map.addBuilding(190, (float)PLACE_BLOCKS_Y-70);
+        map.addBuilding(100, (float)232);
+        map.addBuilding(300, (float)232);
     }
 
     @Override
@@ -166,7 +178,7 @@ public class PlayWindow extends BasicGameState {
         Boolean CollisionWithAnyEnemy=false;
         while(var4.hasNext())
         {
-            Ai CurrentEnemy = (Ai)var4.next();
+            Bot CurrentEnemy = (Bot)var4.next();
             if (player.checkCollision(CurrentEnemy.getLocation()))
             {
                 CollisionWithAnyEnemy=true;
@@ -178,9 +190,9 @@ public class PlayWindow extends BasicGameState {
                 }
                   if (dialogue.getCondition()==ConditionChoice.YES) CurrentEnemy.SetSpeed(5/ 10.0F, 0.0F);
             }
-            CurrentEnemy.behave(AllUnit);
-            if (CurrentEnemy.isAttack())
-                shells.add(CurrentEnemy.attack(new Point(1,0)));
+            CurrentEnemy.behave(AllUnit,map.getListBuildings());
+            if (CurrentEnemy.isAttacked())
+                shells.add(CurrentEnemy.attack());
 
         }
         if (CollisionWithAnyEnemy)
@@ -191,8 +203,9 @@ public class PlayWindow extends BasicGameState {
         this.player.setInput(Input.CheckButtonMove());
 
         if (Input.CheckClickButtons()== TypeInput.Control)
-            shells.add(player.attack(new Point(5,0)));
-
+        {
+            shells.add(player.attack());
+        }
 
         this.player.behave();
     }
@@ -206,7 +219,7 @@ public class PlayWindow extends BasicGameState {
         Iterator var3 = this.enemy.iterator();
         while(var3.hasNext())
         {
-            Ai CurrentEnemy = (Ai)var3.next();
+            Bot CurrentEnemy = (Bot)var3.next();
             CurrentEnemy.draw(loader);
         }
         Iterator var4 = this.shells.iterator();
