@@ -16,8 +16,18 @@ public class AiPatrol implements BehaveAi
     int RadiusVisibility;
     int RadiusAttack;
     int RadiusDistanceToEnemy;
+
+    public Rectangle getTargetEnemy() {
+        return this.TargetEnemy;
+    }
+
+    public void setTargetEnemy(final Rectangle targetEnemy) {
+        this.TargetEnemy = targetEnemy;
+    }
+
     long TimeShooting;
     int DelayShooting;
+    Rectangle TargetEnemy;
     public Bot getBot() {
         return bot;
     }
@@ -87,7 +97,7 @@ public class AiPatrol implements BehaveAi
         this.DetectedPlayer =true;
         int distance= (int) Math.abs(CurrentUnit.getLocation().getCenterX()- this.bot.getLocation().getCenterX());
                 if (((((System.currentTimeMillis()- this.TimeShooting)> this.DelayShooting)&&(CurrentUnit.getNumberCommand()!= this.bot.getNumberCommand())&& this.bot.isCanAttack()))&&
-                    (distance< this.RadiusAttack))
+                    ((distance-CurrentUnit.getLocation().getWidth()/2-getBot().getLocation().getWidth()/2)<= this.RadiusAttack))
                 {
                     this.bot.setAttacked(true);
                     this.TimeShooting =  System.currentTimeMillis();
@@ -103,7 +113,10 @@ public class AiPatrol implements BehaveAi
     public void setTimeMovePatrol(final long timeMovePatrol) {
         this.TimeMovePatrol = timeMovePatrol;
     }
+    public AiPatrol()
+    {
 
+    }
     public AiPatrol(final Bot bot, final int delayChangeMove, final int radiusVisibility, final int radiusAttack, final int delayShooting, int RadiusDistanceToEnemy) {
         this.bot = bot;
         this.DelayChangeMove = delayChangeMove;
@@ -170,31 +183,35 @@ public class AiPatrol implements BehaveAi
             CurrentUnit = (Unit) var1.next();
             if (CurrentUnit.equals(this.bot))
                 continue;
+            int distance= (int) Math.abs(CurrentUnit.getLocation().getCenterX() - this.bot.getLocation().getCenterX());
             //Проверка на попадание в зону видимости текущего юнита
-            final boolean Left = ((this.bot.getLocation().getCenterX() - CurrentUnit.getLocation().getCenterX()) < this.RadiusVisibility)
+            final boolean Left = ((getBot().getLocation().getCenterX()>CurrentUnit.getLocation().getCenterX())
                     && (Math.abs(CurrentUnit.getLocation().getCenterY() - this.bot.getLocation().getCenterY()) < this.bot.getLocation().getHeight())
-                    && (!this.bot.isRightOrLeftLook());
-            final boolean Right = ((CurrentUnit.getLocation().getCenterX() - this.bot.getLocation().getCenterX()) < this.RadiusVisibility)
-                    && (Math.abs(CurrentUnit.getLocation().getCenterY() - this.bot.getLocation().getCenterY()) < this.bot.getLocation().getHeight())
+                    && (!this.bot.isRightOrLeftLook()));
+            final boolean Right =(getBot().getLocation().getCenterX()<CurrentUnit.getLocation().getCenterX())&&
+                     (Math.abs(CurrentUnit.getLocation().getCenterY() - this.bot.getLocation().getCenterY()) < this.bot.getLocation().getHeight())
                     && (this.bot.isRightOrLeftLook());
-            if (Left||Right) return CurrentUnit;
+            if ((distance<RadiusVisibility)&&(Left||Right)) return CurrentUnit;
         }
         return null;
     }
     @Override
-    public void behave(final ArrayList<? extends Unit> unit, final LinkedList<Building> buildings)
+    public void behave(final ArrayList<? extends Unit> unit, final LinkedList<Building> buildings,Unit player)
     {
        final Unit DetectedEnemy= this.CheckEnemy(unit);
-       Rectangle PositionEnemy=null;
+
         if ((DetectedEnemy == null))
         {
             this.DetectedPlayer = false;
         } else {
+            TargetEnemy=DetectedEnemy.getLocation();
+
             this.attack(DetectedEnemy);
-            PositionEnemy=DetectedEnemy.getLocation();
         }
 
-        this.PursuerAi(buildings,unit,PositionEnemy);
+        if (getBot().isOnEarth()) {
+            this.PursuerAi(buildings, unit, TargetEnemy);
+        }
     }
 
     @Override

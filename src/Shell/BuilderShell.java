@@ -9,9 +9,6 @@ import java.util.HashMap;
 public class BuilderShell
 {
     Shell NewShell=new Shell();
-
-
-
     public BuilderShell setSize(final Point size)
     {
 
@@ -20,7 +17,15 @@ public class BuilderShell
 
         return this;
     }
-
+    public BuilderShell setTarget(final Rectangle target) {
+        NewShell.Target = target;
+        return this;
+    }
+   public  BuilderShell setAngle(float angle)
+   {
+       NewShell.setAngle(angle);
+       return  this;
+   }
     public BuilderShell setDamage(final int damage)
     {
         NewShell.damage = damage;
@@ -38,7 +43,7 @@ public class BuilderShell
         return this;
     }
 
-    public BuilderShell setSpeed(final Point speed) {
+    public BuilderShell setSpeed(final double speed) {
         NewShell.speed = speed;
         return this;
     }
@@ -48,8 +53,8 @@ public class BuilderShell
         return this;
     }
 
-    public BuilderShell setIDimage(final HashMap<ConditionShell, Sprites> IDimage) {
-        NewShell.IDimage = IDimage;
+    public BuilderShell addIDimage(ConditionShell condition,  Sprites IDimage) {
+        NewShell.IDimage.put(condition,IDimage);
         return this;
     }
 

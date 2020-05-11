@@ -4,14 +4,20 @@ package Unit;
 import Shell.*;
 import Utils.ImageLoader;
 import Utils.Sprites;
+import Utils.TypeInput;
+import org.newdawn.slick.Animation;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.geom.Point;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Vector2f;
 import Shell.ConditionShell;
+
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import  Shell.TypeShell;
 public abstract class Unit implements Drawable, Movable, Behave ,Collision{
@@ -63,6 +69,7 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
     }
     public Unit()
     {
+
         IDimage.put(ConditionUnit.MOVE_LEFT,Sprites.PLAYER_L);
         IDimage.put(ConditionUnit.MOVE_RIGHT,Sprites.PLAYER_R);
     }
@@ -73,7 +80,9 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
      return Location.intersects(shape);
  }
 
-    public void behave() {
+    public void behave()
+    {
+
     }
 
     public boolean isOnEarth() {
@@ -103,21 +112,31 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
     public void setListForce(Map<String, Vector2f> listForce) {
         this.ListForce = listForce;
     }
-    public Shell attack()
+    public Shell attack(Rectangle EnemyPosition,Unit player)
     {
-
-
-
         if (RightOrLeftLook == true)
         {
             builder.setPosition(new Point(this.getLocation().getMaxX(), this.getLocation().getY() + getLocation().getHeight() / 4));
-            builder.setCondition(ConditionShell.MOVE_RIGHT);
+            if ((EnemyPosition == null)) {
+                builder.setAngle(0);
+            } else {
+                System.out.println((player.getLocation()==EnemyPosition));
+                builder.setTarget(EnemyPosition);
+            }
         } else
         {
             builder.setPosition(new Point(this.getLocation().getX(), this.getLocation().getY() + getLocation().getHeight() / 4));
-            builder.setCondition(ConditionShell.MOVE_LEFT);
+            builder.setAngle(180);
+
+            if ((EnemyPosition != null))
+            {
+                System.out.println((player.getLocation()==EnemyPosition));
+                builder.setTarget(EnemyPosition);
+            }
         }
+
         builder.setNumberCommand(getNumberCommand());
+        builder.setCondition(ConditionShell.MOVE);
         return builder.build();
 
     }
@@ -139,8 +158,19 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
     }
     public void draw(ImageLoader loader)
     {
+        loader.getImagesMap().get(IDimage.get(condition)).start();
+        Player p=null;
+        if (this instanceof Player)
+          p=(Player)this;
 
-        loader.getImagesMap().get(IDimage.get(condition)).draw(this.getLocation().getX(), this.getLocation().getY(), this.getLocation().getWidth(), this.getLocation().getHeight());
+          if (((p!=null)&&((p.getInput()!= TypeInput.Control)&&(p.getInput()!= TypeInput.None)))||(getSpeed().getX()!=0))
+               {
+                   loader.getImagesMap().get(IDimage.get(condition)).draw(this.getLocation().getX(), this.getLocation().getY(), this.getLocation().getWidth(), this.getLocation().getHeight());
+               }
+                    else
+                        {
+                            loader.getImagesMap().get(IDimage.get(condition)).getImage(0).draw(this.getLocation().getX(), this.getLocation().getY(), this.getLocation().getWidth(), this.getLocation().getHeight());
+               }
 
 
     }
@@ -180,7 +210,8 @@ public abstract class Unit implements Drawable, Movable, Behave ,Collision{
         var10000.y += y;
     }
     public void setLocation(Rectangle location) {
-        this.Location = location;
+        this.Location.setLocation(location.getX(),location.getY());
+        Location.setSize(location.getWidth(),location.getHeight());
     }
     public boolean isJump() {
         return this.jump;

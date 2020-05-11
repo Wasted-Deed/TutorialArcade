@@ -11,7 +11,7 @@ import org.newdawn.slick.geom.Rectangle;
 
 public class Player extends Unit
 {
-    TypeInput input;
+    TypeInput input=TypeInput.None;
 
 
 
@@ -42,6 +42,7 @@ public class Player extends Unit
             case R_UP:
                 if (!isJump())
                 {
+                    setOnEarth(false);
                     this.move(this.getmWalkSpeed() , 0.0F);
                     if (!this.isJump()) {
                         j = -this.getmJumpSpeed();
@@ -53,6 +54,7 @@ public class Player extends Unit
                 break;
             case L_UP:
                 if (!isJump()) {
+
                      this.move(-this.getmWalkSpeed() , 0.0F);
                 }
                 setCondition(ConditionUnit.MOVE_LEFT);
@@ -63,6 +65,8 @@ public class Player extends Unit
                         j = -this.getmJumpSpeed();
                         this.addSpeed(0.0F, j);
                         this.setJump(true);
+                        setOnEarth(false);
+
                         System.out.println("Õ¿∆¿“»≈!!!!!!!!!!!");
                     }
                 break;

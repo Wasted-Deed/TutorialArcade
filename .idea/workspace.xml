@@ -2,32 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11237784-26fc-40f8-b6f8-74e2cc2d1993" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Shell/BuilderShell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Unit/AiPatrol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Unit/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Main/PlayWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Main/PlayWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Shell/Shell$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Shell/Shell$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Shell/BuilderShell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Shell/BuilderShell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Shell/ConditionShell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Shell/ConditionShell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Shell/Shell$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Shell/Shell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Shell/Shell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Ai.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Shell/TypeShell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Shell/TypeShell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/AiPatrol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/AiPatrol.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/BehaveAi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/BehaveAi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Bot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Unit/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Unit/Unit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Utils/ImageLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Utils/ImageLoader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Utils/Physics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Utils/Physics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ocean/Building.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/Building.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ocean/GameMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/GameMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/ocean/TypeBuilding.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/ocean/TypeBuilding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/Utils/Sprites.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/Utils/Sprites.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/bulletR.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/bulletR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/enemy_0L.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/enemy_0L.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/enemy_0R.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/enemy_0R.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/slick2d1/playerL.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/slick2d1/playerL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/bulletR.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/bulletR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/enemy_0L.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/enemy_0L.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/enemy_0R.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/enemy_0R.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/playerL.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/playerL.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/PlayWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/PlayWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shell/BuilderShell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shell/BuilderShell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shell/ConditionShell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shell/ConditionShell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shell/Shell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shell/Shell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/Ai.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit/Behave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Behave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shell/TypeShell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shell/TypeShell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unit/AiPatrol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/AiPatrol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Unit/BehaveAi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/BehaveAi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unit/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Bot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Unit/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Unit/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit/Unit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/ImageLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Physics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ocean/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ocean/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ocean/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ocean/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ocean/TypeBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ocean/TypeBuilding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Sprites.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Sprites.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +166,11 @@
       <workItem from="1588522143861" duration="9670000" />
       <workItem from="1588580505225" duration="36251000" />
       <workItem from="1588697139914" duration="1709000" />
-      <workItem from="1588699092475" duration="17708000" />
+      <workItem from="1588699092475" duration="25992000" />
+      <workItem from="1588859134827" duration="15859000" />
+      <workItem from="1588923412418" duration="6029000" />
+      <workItem from="1588941071539" duration="1883000" />
+      <workItem from="1588964862896" duration="74042000" />
     </task>
     <servers />
   </component>
@@ -176,18 +191,18 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser" timestamp="1588715082301">
+    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser" timestamp="1589063702936">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1588715082301" />
+    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1589063702936" />
     <state x="534" y="257" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586081065014">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="534" y="257" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1586081065014" />
-    <state x="484" y="234" width="398" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588711707609">
+    <state x="484" y="234" width="398" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589191865996">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="484" y="234" width="398" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1588711707609" />
+    <state x="484" y="234" width="398" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1589191865996" />
     <state x="503" y="203" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1588698510431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -196,70 +211,78 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="119" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1587739422482" />
-    <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587805466295">
+    <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589045350404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1587805466295" />
+    <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1589045350404" />
     <state x="406" y="91" key="#xdebugger.XInspectDialog" timestamp="1587825037962">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="406" y="91" key="#xdebugger.XInspectDialog/0.0.1366.728@0.0.1366.728" timestamp="1587825037962" />
+    <state width="399" height="438" key="DebuggerActiveHint" timestamp="1589202591802">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="399" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1589202591802" />
     <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1588017026084">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588017026084" />
-    <state width="1323" height="56" key="GridCell.Tab.0.bottom" timestamp="1588716891933">
+    <state width="1323" height="127" key="GridCell.Tab.0.bottom" timestamp="1589233330847">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="56" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588716891933" />
-    <state width="1323" height="56" key="GridCell.Tab.0.center" timestamp="1588716891933">
+    <state width="1323" height="127" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589233330847" />
+    <state width="1323" height="127" key="GridCell.Tab.0.center" timestamp="1589233330847">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="56" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588716891933" />
-    <state width="1323" height="56" key="GridCell.Tab.0.left" timestamp="1588716891933">
+    <state width="1323" height="127" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589233330847" />
+    <state width="1323" height="127" key="GridCell.Tab.0.left" timestamp="1589233330847">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="56" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588716891933" />
-    <state width="1323" height="56" key="GridCell.Tab.0.right" timestamp="1588716891933">
+    <state width="1323" height="127" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589233330847" />
+    <state width="1323" height="127" key="GridCell.Tab.0.right" timestamp="1589233330847">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="56" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588716891933" />
-    <state width="1323" height="206" key="GridCell.Tab.1.bottom" timestamp="1588716370930">
+    <state width="1323" height="127" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589233330847" />
+    <state width="1323" height="236" key="GridCell.Tab.1.bottom" timestamp="1589228935751">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="206" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588716370930" />
-    <state width="1323" height="206" key="GridCell.Tab.1.center" timestamp="1588716370930">
+    <state width="1323" height="236" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589228935751" />
+    <state width="1323" height="236" key="GridCell.Tab.1.center" timestamp="1589228935750">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="206" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588716370930" />
-    <state width="1323" height="206" key="GridCell.Tab.1.left" timestamp="1588716370929">
+    <state width="1323" height="236" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1589228935750" />
+    <state width="1323" height="236" key="GridCell.Tab.1.left" timestamp="1589228935750">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="206" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588716370929" />
-    <state width="1323" height="206" key="GridCell.Tab.1.right" timestamp="1588716370930">
+    <state width="1323" height="236" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1589228935750" />
+    <state width="1323" height="236" key="GridCell.Tab.1.right" timestamp="1589228935751">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="206" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588716370930" />
+    <state width="1323" height="236" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1589228935751" />
     <state x="186" y="10" key="SettingsEditor" timestamp="1588668056566">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1588668056566" />
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1588699093868">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1589186204908">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588699093868" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1589186204908" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1588965210922">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588965210922" />
     <state x="413" y="140" key="extract.method.dialog" timestamp="1588709261258">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="140" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1588709261258" />
-    <state x="680" y="166" key="run.anything.popup" timestamp="1588697865643">
+    <state x="680" y="166" key="run.anything.popup" timestamp="1589032103213">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="680" y="166" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1588697865643" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1588714133657">
+    <state x="680" y="166" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1589032103213" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1588869844160">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1588714133657" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1588869844160" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -270,9 +293,19 @@
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Unit/Unit.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="48" />
+          <url>file://$PROJECT_DIR$/src/Unit/AiPatrol.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Shell/Shell.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Unit/AiPatrol.java</url>
+          <line>206</line>
+          <option name="timeStamp" value="157" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -280,6 +313,7 @@
       <configuration name="Application">
         <watch expression="((Shell.Shell)((java.util.ArrayList)((PlayWindow)this).shells).get(11)).Location" custom="Main.PlayWindow,Shell.Shell,java.util.ArrayList" />
         <watch expression="((PlayWindow)this).Input" custom="Main.PlayWindow" />
+        <watch expression="this" />
       </configuration>
     </watches-manager>
   </component>

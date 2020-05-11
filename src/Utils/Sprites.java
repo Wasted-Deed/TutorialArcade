@@ -14,6 +14,7 @@ public enum Sprites {
     ShellL,
     ENEMY_0L,
     ENEMY_0R,
+    ENEMY_1,
     HEART;
     private Sprites() {
     }

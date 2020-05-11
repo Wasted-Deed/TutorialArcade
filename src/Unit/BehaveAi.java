@@ -7,5 +7,5 @@ import java.util.LinkedList;
 
 public interface BehaveAi extends Behave
 {
-    public void behave(ArrayList<? extends Unit> unit, LinkedList<Building> buildings);
+    public void behave(ArrayList<? extends Unit> unit, LinkedList<Building> buildings,Unit player);
 }

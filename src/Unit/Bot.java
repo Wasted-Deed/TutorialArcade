@@ -11,7 +11,7 @@ import java.util.LinkedList;
 public class Bot extends Unit implements BehaveAi
 {
 
-    AiPatrol Ai;
+    AiPatrol Ai=new AiPatrol();
     boolean Attacked =false;
     boolean CanAttack;
     public boolean isCanAttack() {
@@ -58,11 +58,11 @@ public class Bot extends Unit implements BehaveAi
         this.Ai = ai;
     }
 
-    public void behave(ArrayList<? extends Unit> unit, LinkedList<Building> buildings)
+    public void behave(ArrayList<? extends Unit> unit, LinkedList<Building> buildings,Unit player)
     {
 
 
-        Ai.behave(unit,buildings);
+        Ai.behave(unit,buildings,player);
         if(this.getSpeed().getY()!=0) move();
         setCondition(this.isRightOrLeftLook() ? ConditionUnit.MOVE_RIGHT : ConditionUnit.MOVE_LEFT);
     }

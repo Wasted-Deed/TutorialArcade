@@ -2,5 +2,5 @@ package Shell;
 
 public enum TypeShell
 {
-    NORMAL;
+    NORMAL,ROCKET;
 }
